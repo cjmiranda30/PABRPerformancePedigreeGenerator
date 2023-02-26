@@ -26,8 +26,15 @@ namespace PABR_PedigreeChartGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
+
             Form2 f2 = new Form2();
             f2.Show();
+
+
+            this.Invoke(new Action(() => splash.Close()));
+
             this.Hide();
         }
     }

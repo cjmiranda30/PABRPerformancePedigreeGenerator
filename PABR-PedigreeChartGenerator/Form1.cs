@@ -30,12 +30,16 @@ namespace PABR_PedigreeChartGenerator
             }
             else
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
+
                 bool val = IsLoginSuccess(textBox1.Text.Trim(), textBox2.Text.Trim());
 
                 if (val)
                 {
                     Form3 f2 = new Form3();
                     f2.Show();
+                    this.Invoke(new Action(() => splash.Close()));
                     this.Hide();
                 }
                 else
@@ -46,8 +50,10 @@ namespace PABR_PedigreeChartGenerator
                     LoginDetails.userFName = string.Empty;
                     LoginDetails.userLName = string.Empty;
 
+                    this.Invoke(new Action(() => splash.Close()));
                     MessageBox.Show("Incorrect Email/Password", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
             }
         }
 

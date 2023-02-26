@@ -29,3 +29,4 @@ D:\Freelance Project\PABR\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerato
 D:\Freelance Project\PABR\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\obj\Debug\net7.0-windows\PABR_PedigreeChartGenerator.Form5.resources
 D:\Freelance Project\PABR\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\obj\Debug\net7.0-windows\PABR_PedigreeChartGenerator.Form6.resources
 D:\Freelance Project\PABR\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\obj\Debug\net7.0-windows\PABR_PedigreeChartGenerator.Form7.resources
+D:\Freelance Project\PABR\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\PABR-PedigreeChartGenerator\obj\Debug\net7.0-windows\PABR_PedigreeChartGenerator.SplashScreen.resources

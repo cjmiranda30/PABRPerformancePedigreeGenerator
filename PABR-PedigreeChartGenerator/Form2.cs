@@ -849,6 +849,9 @@ namespace PABR_PedigreeChartGenerator
 
         private void button6_Click(object sender, EventArgs e)
         {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
+
             Form7 f7 = new Form7(ParentSire, "ParentSire");
             f7.ShowDialog();
 
@@ -1213,10 +1216,15 @@ namespace PABR_PedigreeChartGenerator
 
                 uParentSire = 0; isChangeParentSire = false;
             }
+
+            this.Invoke(new Action(() => splash.Close()));
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
+
             Form7 f7 = new Form7(ParentDam, "ParentDam");
             f7.ShowDialog();
 
@@ -1581,10 +1589,14 @@ namespace PABR_PedigreeChartGenerator
 
                 uParentDam = 0; isChangeParentDam = false;
             }
+            this.Invoke(new Action(() => splash.Close()));
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
+
             Form7 f7 = new Form7(GrandParentSire1, "GrandParentSire1");
             f7.ShowDialog();
 
@@ -1746,6 +1758,7 @@ namespace PABR_PedigreeChartGenerator
 
                 uGrandParentSire1 = 0; isChangeGrandParentSire1 = false;
             }
+            this.Invoke(new Action(() => splash.Close()));
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -1755,6 +1768,9 @@ namespace PABR_PedigreeChartGenerator
 
             if (isChangeGrandParentDam1)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
+
                 GrandParentDam1 = uGrandParentDam1;
 
                 #region GrandDamDetails1
@@ -1910,15 +1926,21 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGrandParentDam1 = 0; isChangeGrandParentDam1 = false;
+
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
         private void button10_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GrandParentSire2, "GrandParentSire2");
             f7.ShowDialog();
 
             if (isChangeGrandParentSire2)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
+
                 GrandParentSire2 = uGrandParentSire2;
 
                 #region GrandSireDetails2
@@ -2074,16 +2096,23 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGrandParentSire2 = 0; isChangeGrandParentSire2 = false;
+
+
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GrandParentDam2, "GrandParentDam2");
             f7.ShowDialog();
 
             if (isChangeGrandParentDam2)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
+
                 GrandParentDam2 = uGrandParentDam2;
 
                 #region GrandDamDetails2
@@ -2239,16 +2268,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGrandParentDam2 = 0; isChangeGrandParentDam2 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentSire1, "GGrandParentSire1");
             f7.ShowDialog();
 
             if (isChangeGGrandParentSire1)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentSire1 = uGGrandParentSire1;
 
                 #region GGrandSireDetails1
@@ -2301,16 +2334,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentSire1 = 0; isChangeGGrandParentSire1 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentDam1, "GGrandParentDam1");
             f7.ShowDialog();
 
             if (isChangeGGrandParentDam1)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentDam1 = uGGrandParentDam1;
 
                 #region GGrandDamDetails1
@@ -2363,16 +2400,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentDam1 = 0; isChangeGGrandParentDam1 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentSire2, "GGrandParentSire2");
             f7.ShowDialog();
 
             if (isChangeGGrandParentSire2)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentSire2 = uGGrandParentSire2;
 
                 #region GGrandSireDetails2
@@ -2425,16 +2466,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentSire2 = 0; isChangeGGrandParentSire2 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentDam2, "GGrandParentDam2");
             f7.ShowDialog();
 
             if (isChangeGGrandParentDam2)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentDam2 = uGGrandParentDam2;
 
                 #region GGrandDamDetails2
@@ -2487,16 +2532,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentDam2 = 0; isChangeGGrandParentDam2 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentSire3, "GGrandParentSire3");
             f7.ShowDialog();
 
             if (isChangeGGrandParentSire3)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentSire3 = uGGrandParentSire3;
 
                 #region GGrandSireDetails3
@@ -2549,16 +2598,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentSire3 = 0; isChangeGGrandParentSire3 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentDam3, "GGrandParentDam3");
             f7.ShowDialog();
 
             if (isChangeGGrandParentDam3)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentDam3 = uGGrandParentDam3;
 
                 #region GrandDamDetails3
@@ -2611,16 +2664,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentDam3 = 0; isChangeGGrandParentDam3 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentSire4, "GGrandParentSire4");
             f7.ShowDialog();
 
             if (isChangeGGrandParentSire4)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentSire4 = uGGrandParentSire4;
 
                 #region GGrandSireDetails4
@@ -2673,16 +2730,20 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentSire4 = 0; isChangeGGrandParentSire4 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
+
             Form7 f7 = new Form7(GGrandParentDam4, "GGrandParentDam4");
             f7.ShowDialog();
 
             if (isChangeGGrandParentDam4)
             {
+                SplashScreen splash = new SplashScreen();
+                splash.Show();
                 GGrandParentDam4 = uGGrandParentDam4;
 
                 #region GGrandDamDetails4
@@ -2735,7 +2796,97 @@ namespace PABR_PedigreeChartGenerator
                 #endregion
 
                 uGGrandParentDam4 = 0; isChangeGGrandParentDam4 = false;
+                this.Invoke(new Action(() => splash.Close()));
             }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SplashScreen splash = new SplashScreen();
+            splash.Show();
+
+
+            //Dog
+            UpdatePerformancePedigree(int.Parse(CurSelectedDog.UID), ParentSire, ParentDam);
+
+            //ParentSire
+            UpdatePerformancePedigree(ParentSire, GrandParentSire1, GrandParentDam1);
+
+            //ParentDam
+            UpdatePerformancePedigree(ParentDam, GrandParentSire2, GrandParentDam2);
+
+            //GrandParentSire1
+            UpdatePerformancePedigree(GrandParentSire1, GGrandParentSire1, GGrandParentDam1);
+
+            //GrandParentDam1
+            UpdatePerformancePedigree(GrandParentDam1, GGrandParentSire2, GGrandParentDam2);
+
+            //GrandParentSire2
+            UpdatePerformancePedigree(GrandParentSire2, GGrandParentSire3, GGrandParentDam3);
+
+            //GrandParentDam2
+            UpdatePerformancePedigree(GrandParentDam2, GGrandParentSire4, GGrandParentDam4);
+
+            //GGrandParentSire1
+            UpdatePerformancePedigree(GGrandParentSire1, 0, 0);
+
+            //GGrandParentDam1
+            UpdatePerformancePedigree(GGrandParentDam1, 0, 0);
+
+            //GGrandParentSire2
+            UpdatePerformancePedigree(GGrandParentSire2, 0, 0);
+
+            //GGrandParentDam2
+            UpdatePerformancePedigree(GGrandParentDam2, 0, 0);
+
+            //GGrandParentSire3
+            UpdatePerformancePedigree(GGrandParentSire3, 0, 0);
+
+            //GGrandParentDam3
+            UpdatePerformancePedigree(GGrandParentDam3, 0, 0);
+
+            //GGrandParentSire4
+            UpdatePerformancePedigree(GGrandParentSire4, 0, 0);
+
+            //GGrandParentDam4
+            UpdatePerformancePedigree(GGrandParentDam4, 0, 0);
+
+            //MessageBox.Show("Unable to delete dog.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            this.Invoke(new Action(() => splash.Close()));
+
+            MessageBox.Show("Successfully Updated.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+            this.Dispose();
+        }
+
+        private bool UpdatePerformancePedigree(int DogID, int DamID, int SireID)
+        {
+            bool result = false;
+
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.PostAsync("api/PedigreeChart/UpdateDogDamSireID?DogID=" + DogID.ToString() +"&DamID=" + DamID.ToString() +"&SireID=" + SireID.ToString(), null).Result;
+                var resp = response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                var status = responseJson.status;
+                var title = responseJson.title;
+
+                if (status == "error")
+                {
+                    result = false;
+                }
+                else if (status == "success")
+                {
+                    result = true;
+                }
+
+            }
+
+            return result;
         }
 
     }
