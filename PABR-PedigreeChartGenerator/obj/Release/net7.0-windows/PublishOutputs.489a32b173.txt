@@ -1,0 +1,11 @@
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\PABR-PedigreeChartGenerator.exe
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\PABR-PedigreeChartGenerator.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\PABR-PedigreeChartGenerator.deps.json
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\PABR-PedigreeChartGenerator.runtimeconfig.json
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\PABR-PedigreeChartGenerator.pdb
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\MaterialSkin.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\MetroFramework.Design.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\MetroFramework.Fonts.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\MetroFramework.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\MetroSet UI.dll
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\publish\Newtonsoft.Json.dll

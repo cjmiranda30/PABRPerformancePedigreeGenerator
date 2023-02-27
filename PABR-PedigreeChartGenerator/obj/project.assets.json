@@ -215,11 +215,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Freelance Project\\PABR\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator.csproj",
+      "projectUniqueName": "D:\\Freelance Project\\PABR\\GitHub Project\\PABRPFGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator.csproj",
       "projectName": "PABR-PedigreeChartGenerator",
-      "projectPath": "D:\\Freelance Project\\PABR\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator.csproj",
+      "projectPath": "D:\\Freelance Project\\PABR\\GitHub Project\\PABRPFGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator.csproj",
       "packagesPath": "C:\\Users\\BossMOMMY\\.nuget\\packages\\",
-      "outputPath": "D:\\Freelance Project\\PABR\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\PABR-PedigreeChartGenerator\\obj\\",
+      "outputPath": "D:\\Freelance Project\\PABR\\GitHub Project\\PABRPFGenerator\\PABR-PedigreeChartGenerator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

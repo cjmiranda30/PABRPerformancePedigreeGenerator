@@ -2808,47 +2808,90 @@ namespace PABR_PedigreeChartGenerator
             //Dog
             UpdatePerformancePedigree(int.Parse(CurSelectedDog.UID), ParentSire, ParentDam);
 
-            //ParentSire
-            UpdatePerformancePedigree(ParentSire, GrandParentSire1, GrandParentDam1);
 
-            //ParentDam
-            UpdatePerformancePedigree(ParentDam, GrandParentSire2, GrandParentDam2);
+            if (ParentSire > 0)
+            {
+                //ParentSire
+                UpdatePerformancePedigree(ParentSire, GrandParentSire1, GrandParentDam1);
+            }
 
-            //GrandParentSire1
-            UpdatePerformancePedigree(GrandParentSire1, GGrandParentSire1, GGrandParentDam1);
+            if (ParentDam > 0)
+            {
+                //ParentDam
+                UpdatePerformancePedigree(ParentDam, GrandParentSire2, GrandParentDam2);
+            }
 
-            //GrandParentDam1
-            UpdatePerformancePedigree(GrandParentDam1, GGrandParentSire2, GGrandParentDam2);
+            if (GrandParentSire1 > 0)
+            {
+                //GrandParentSire1
+                UpdatePerformancePedigree(GrandParentSire1, GGrandParentSire1, GGrandParentDam1);
+            }
 
-            //GrandParentSire2
-            UpdatePerformancePedigree(GrandParentSire2, GGrandParentSire3, GGrandParentDam3);
+            if (GrandParentDam1 > 0)
+            {
+                //GrandParentDam1
+                UpdatePerformancePedigree(GrandParentDam1, GGrandParentSire2, GGrandParentDam2);
+            }
 
-            //GrandParentDam2
-            UpdatePerformancePedigree(GrandParentDam2, GGrandParentSire4, GGrandParentDam4);
+            if (GrandParentSire2 > 0)
+            {
+                //GrandParentSire2
+                UpdatePerformancePedigree(GrandParentSire2, GGrandParentSire3, GGrandParentDam3);
+            }
 
-            //GGrandParentSire1
-            UpdatePerformancePedigree(GGrandParentSire1, 0, 0);
+            if (GrandParentDam2 > 0)
+            {
+                //GrandParentDam2
+                UpdatePerformancePedigree(GrandParentDam2, GGrandParentSire4, GGrandParentDam4);
+            }
 
-            //GGrandParentDam1
-            UpdatePerformancePedigree(GGrandParentDam1, 0, 0);
+            if (GGrandParentSire1 > 0)
+            {
+                //GGrandParentSire1
+                UpdatePerformancePedigree(GGrandParentSire1, 0, 0);
+            }
 
-            //GGrandParentSire2
-            UpdatePerformancePedigree(GGrandParentSire2, 0, 0);
+            if (GGrandParentDam1 > 0)
+            {
+                //GGrandParentDam1
+                UpdatePerformancePedigree(GGrandParentDam1, 0, 0);
+            }
 
-            //GGrandParentDam2
-            UpdatePerformancePedigree(GGrandParentDam2, 0, 0);
+            if (GGrandParentSire2 > 0)
+            {
+                //GGrandParentSire2
+                UpdatePerformancePedigree(GGrandParentSire2, 0, 0);
+            }
 
-            //GGrandParentSire3
-            UpdatePerformancePedigree(GGrandParentSire3, 0, 0);
+            if (GGrandParentDam2 > 0)
+            {
+                //GGrandParentDam2
+                UpdatePerformancePedigree(GGrandParentDam2, 0, 0);
+            }
 
-            //GGrandParentDam3
-            UpdatePerformancePedigree(GGrandParentDam3, 0, 0);
+            if (GGrandParentSire3 > 0)
+            {
+                //GGrandParentSire3
+                UpdatePerformancePedigree(GGrandParentSire3, 0, 0);
+            }
 
-            //GGrandParentSire4
-            UpdatePerformancePedigree(GGrandParentSire4, 0, 0);
+            if (GGrandParentDam3 > 0)
+            {
+                //GGrandParentDam3
+                UpdatePerformancePedigree(GGrandParentDam3, 0, 0);
+            }
 
-            //GGrandParentDam4
-            UpdatePerformancePedigree(GGrandParentDam4, 0, 0);
+            if (GGrandParentSire4 > 0)
+            {
+                //GGrandParentSire4
+                UpdatePerformancePedigree(GGrandParentSire4, 0, 0);
+            }
+
+            if (GGrandParentDam4 > 0)
+            {
+                //GGrandParentDam4
+                UpdatePerformancePedigree(GGrandParentDam4, 0, 0);
+            }
 
             //MessageBox.Show("Unable to delete dog.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
