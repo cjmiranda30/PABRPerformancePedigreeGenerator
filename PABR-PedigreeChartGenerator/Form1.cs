@@ -64,7 +64,7 @@ namespace PABR_PedigreeChartGenerator
 
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
                 var lgn = new
                 {
                     userEmail = un,

@@ -65,10 +65,13 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetAll", null).Result;
                 var resp = response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                    return;
 
                 List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
 

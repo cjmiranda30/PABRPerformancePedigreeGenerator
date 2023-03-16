@@ -1,0 +1,15 @@
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.csproj.AssemblyReference.cache
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form1.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form2.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form3.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form4.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form5.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form6.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Form7.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.Properties.Resources.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR_PedigreeChartGenerator.SplashScreen.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.csproj.GenerateResource.cache
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.AssemblyInfoInputs.cache
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.AssemblyInfo.cs
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net5.0-windows\PABR-PedigreeChartGenerator.csproj.CoreCompileInputs.cache

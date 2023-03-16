@@ -26,7 +26,7 @@ namespace PABR_PedigreeChartGenerator
         private async void loadDogDetails()
         {
             label1.Text = label1.Text + " " + CurSelectedDog.DogName.Trim();
-            label2.Text = label2.Text + " " + CurSelectedDog.Gender.Trim();
+            label2.Text = (CurSelectedDog.Gender.Trim() == "M") ? label2.Text + " " +  "MALE" : label2.Text + " " + "FEMALE";
             label3.Text = label3.Text + " " + CurSelectedDog.Breed.Trim();
             label6.Text = label6.Text + " " + CurSelectedDog.Color.Trim();
             label5.Text = label5.Text + " " + CurSelectedDog.OwnerName.Trim();
@@ -37,7 +37,7 @@ namespace PABR_PedigreeChartGenerator
 
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = await httpClient.PostAsync("api/PedigreeChart/download-dog-picture?fileName=" + CurSelectedDog.PicURL, null);
 
@@ -61,7 +61,7 @@ namespace PABR_PedigreeChartGenerator
             {
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.DeleteAsync("api/PedigreeChart/DeleteDog?ID=" + CurSelectedDog.UID).Result;
                     var resp = response.Content.ReadAsStringAsync();

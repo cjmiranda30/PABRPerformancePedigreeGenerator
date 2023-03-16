@@ -21,6 +21,7 @@ namespace PABR_PedigreeChartGenerator
         public Form5()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace PABR_PedigreeChartGenerator
             //Upload Dog Picture to get filename
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                client.BaseAddress = new Uri("https://pabrdexapi.com");
                 //client.BaseAddress = new Uri("https://localhost:7060/");
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
 
@@ -164,12 +165,13 @@ namespace PABR_PedigreeChartGenerator
 
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var dogParams = new
                     {
                         dogName = textBox1.Text.Trim(),
-                        gender = textBox2.Text.Trim(),
+                        //gender = textBox2.Text.Trim(),
+                        gender = (comboBox1.SelectedIndex == 0) ? "M" : "F",
                         breed = textBox3.Text.Trim(),
                         color = textBox4.Text.Trim(),
                         ownerName = textBox5.Text.Trim(),

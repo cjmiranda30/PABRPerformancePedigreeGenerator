@@ -71,7 +71,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + CurSelectedDog.UID, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -133,7 +133,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + ParentSire, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -185,7 +185,8 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                //httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + ParentDam, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -240,7 +241,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentSire1, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -292,7 +293,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentDam1, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -344,7 +345,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentSire2, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -396,7 +397,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentDam2, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -451,7 +452,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire1, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -500,7 +501,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam1, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -549,7 +550,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire2, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -598,7 +599,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam2, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -649,7 +650,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire3, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -698,7 +699,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam3, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -747,7 +748,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire4, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -796,7 +797,7 @@ namespace PABR_PedigreeChartGenerator
             //get dog details
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam4, null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -865,7 +866,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uParentSire, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -920,7 +921,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentSire1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -972,7 +973,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentDam1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1024,7 +1025,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1073,7 +1074,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1122,7 +1123,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1171,7 +1172,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1238,7 +1239,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uParentDam, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1293,7 +1294,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentSire2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1345,7 +1346,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GrandParentDam2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1397,7 +1398,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1446,7 +1447,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1495,7 +1496,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1544,7 +1545,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1610,7 +1611,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGrandParentSire1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1664,7 +1665,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1713,7 +1714,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1779,7 +1780,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGrandParentDam1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1833,7 +1834,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1882,7 +1883,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -1949,7 +1950,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGrandParentSire2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2003,7 +2004,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2052,7 +2053,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2121,7 +2122,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGrandParentDam2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2175,7 +2176,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2224,7 +2225,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentDam4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2290,7 +2291,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + GGrandParentSire1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2356,7 +2357,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentDam1, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2422,7 +2423,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentSire2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2488,7 +2489,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentDam2, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2554,7 +2555,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentSire3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2620,7 +2621,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentDam3, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2686,7 +2687,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentSire4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2752,7 +2753,7 @@ namespace PABR_PedigreeChartGenerator
                 //get dog details
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                     var response = httpClient.PostAsync("api/PedigreeChart/GetDogDamSire?ID=" + uGGrandParentDam4, null).Result;
                     var resp = response.Content.ReadAsStringAsync();
@@ -2910,7 +2911,7 @@ namespace PABR_PedigreeChartGenerator
 
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri("http://pabrbullies2022-001-site2.htempurl.com/");
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/UpdateDogDamSireID?DogID=" + DogID.ToString() +"&DamID=" + DamID.ToString() +"&SireID=" + SireID.ToString(), null).Result;
                 var resp = response.Content.ReadAsStringAsync();
