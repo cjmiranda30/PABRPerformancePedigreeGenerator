@@ -122,8 +122,8 @@ namespace PABR_PedigreeChartGenerator
                 label9.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][6].ToString()) ? label9.Text : label9.Text + "   " + dtDog.Rows[0][6].ToString();
                 label10.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][4].ToString()) ? label10.Text : label10.Text + "   " + dtDog.Rows[0][4].ToString();
 
-                ParentSire = string.IsNullOrWhiteSpace(dtDog.Rows[0][10].ToString()) ? 0 : int.Parse(dtDog.Rows[0][10].ToString());
-                ParentDam = string.IsNullOrWhiteSpace(dtDog.Rows[0][9].ToString()) ? 0 : int.Parse(dtDog.Rows[0][9].ToString());
+                ParentSire = string.IsNullOrWhiteSpace(dtDog.Rows[0][9].ToString()) ? 0 : int.Parse(dtDog.Rows[0][9].ToString());
+                ParentDam = string.IsNullOrWhiteSpace(dtDog.Rows[0][8].ToString()) ? 0 : int.Parse(dtDog.Rows[0][8].ToString());
             }
             #endregion
 
@@ -171,11 +171,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSire.Rows.Count > 0)
             {
                 label14.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][1].ToString()) ? label14.Text : label14.Text + "   " + dtDogSire.Rows[0][1].ToString();
-                label13.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][7].ToString()) ? label13.Text : label13.Text + "   " + dtDogSire.Rows[0][7].ToString();
+                label13.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][6].ToString()) ? label13.Text : label13.Text + "   " + dtDogSire.Rows[0][6].ToString();
                 label12.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][4].ToString()) ? label12.Text : label12.Text + "   " + dtDogSire.Rows[0][4].ToString();
 
-                GrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][10].ToString());
-                GrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][9].ToString());
+                GrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][9].ToString());
+                GrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][8].ToString());
             }
             #endregion
 
@@ -224,11 +224,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDam.Rows.Count > 0)
             {
                 label16.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][1].ToString()) ? label16.Text : label16.Text + "   " + dtDogDam.Rows[0][1].ToString();
-                label15.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][7].ToString()) ? label15.Text : label15.Text + "   " + dtDogDam.Rows[0][7].ToString();
+                label15.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][6].ToString()) ? label15.Text : label15.Text + "   " + dtDogDam.Rows[0][6].ToString();
                 label11.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][4].ToString()) ? label11.Text : label11.Text + "   " + dtDogDam.Rows[0][4].ToString();
 
-                GrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][10].ToString());
-                GrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][9].ToString());
+                GrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][9].ToString());
+                GrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][8].ToString());
             }
             #endregion
         }
@@ -279,11 +279,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGP1.Rows.Count > 0)
             {
                 label19.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][1].ToString()) ? label19.Text : label19.Text + "   " + dtDogSireGP1.Rows[0][1].ToString();
-                label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][7].ToString()) ? label18.Text : label18.Text + "   " + dtDogSireGP1.Rows[0][7].ToString();
+                label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][6].ToString()) ? label18.Text : label18.Text + "   " + dtDogSireGP1.Rows[0][6].ToString();
                 label17.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][4].ToString()) ? label17.Text : label17.Text + "   " + dtDogSireGP1.Rows[0][4].ToString();
 
-                GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][10].ToString());
-                GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][8].ToString());
             }
             #endregion
 
@@ -331,11 +331,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGP1.Rows.Count > 0)
             {
                 label22.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][1].ToString()) ? label22.Text : label22.Text + "   " + dtDogDamGP1.Rows[0][1].ToString();
-                label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][7].ToString()) ? label21.Text : label21.Text + "   " + dtDogDamGP1.Rows[0][7].ToString();
+                label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][6].ToString()) ? label21.Text : label21.Text + "   " + dtDogDamGP1.Rows[0][6].ToString();
                 label20.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][4].ToString()) ? label20.Text : label20.Text + "   " + dtDogDamGP1.Rows[0][4].ToString();
 
-                GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][10].ToString());
-                GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][8].ToString());
             }
             #endregion
 
@@ -383,11 +383,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGP2.Rows.Count > 0)
             {
                 label28.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][1].ToString()) ? label28.Text : label28.Text + "   " + dtDogSireGP2.Rows[0][1].ToString();
-                label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][7].ToString()) ? label27.Text : label27.Text + "   " + dtDogSireGP2.Rows[0][7].ToString();
+                label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][6].ToString()) ? label27.Text : label27.Text + "   " + dtDogSireGP2.Rows[0][6].ToString();
                 label26.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][4].ToString()) ? label26.Text : label26.Text + "   " + dtDogSireGP2.Rows[0][4].ToString();
 
-                GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][10].ToString());
-                GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][8].ToString());
             }
             #endregion
 
@@ -435,11 +435,11 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGP2.Rows.Count > 0)
             {
                 label25.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][1].ToString()) ? label25.Text : label25.Text + "   " + dtDogDamGP2.Rows[0][1].ToString();
-                label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][7].ToString()) ? label24.Text : label24.Text + "   " + dtDogDamGP2.Rows[0][7].ToString();
+                label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][6].ToString()) ? label24.Text : label24.Text + "   " + dtDogDamGP2.Rows[0][6].ToString();
                 label23.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][4].ToString()) ? label23.Text : label23.Text + "   " + dtDogDamGP2.Rows[0][4].ToString();
 
-                GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][10].ToString());
-                GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][8].ToString());
             }
             #endregion
         }
@@ -490,7 +490,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGGP1.Rows.Count > 0)
             {
                 label34.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][1].ToString()) ? label34.Text : label34.Text + "   " + dtDogSireGGP1.Rows[0][1].ToString();
-                label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][7].ToString()) ? label33.Text : label33.Text + "   " + dtDogSireGGP1.Rows[0][7].ToString();
+                label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][6].ToString()) ? label33.Text : label33.Text + "   " + dtDogSireGGP1.Rows[0][6].ToString();
                 label32.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][4].ToString()) ? label32.Text : label32.Text + "   " + dtDogSireGGP1.Rows[0][4].ToString();
             }
             #endregion
@@ -539,7 +539,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGGP1.Rows.Count > 0)
             {
                 label31.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][1].ToString()) ? label31.Text : label31.Text + "   " + dtDogDamGGP1.Rows[0][1].ToString();
-                label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][7].ToString()) ? label30.Text : label30.Text + "   " + dtDogDamGGP1.Rows[0][7].ToString();
+                label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][6].ToString()) ? label30.Text : label30.Text + "   " + dtDogDamGGP1.Rows[0][6].ToString();
                 label29.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][4].ToString()) ? label29.Text : label29.Text + "   " + dtDogDamGGP1.Rows[0][4].ToString();
             }
             #endregion
@@ -588,7 +588,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGGP2.Rows.Count > 0)
             {
                 label40.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][1].ToString()) ? label40.Text : label40.Text + "   " + dtDogSireGGP2.Rows[0][1].ToString();
-                label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][7].ToString()) ? label39.Text : label39.Text + "   " + dtDogSireGGP2.Rows[0][7].ToString();
+                label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][6].ToString()) ? label39.Text : label39.Text + "   " + dtDogSireGGP2.Rows[0][6].ToString();
                 label38.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][4].ToString()) ? label38.Text : label38.Text + "   " + dtDogSireGGP2.Rows[0][4].ToString();
             }
             #endregion
@@ -637,7 +637,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGGP2.Rows.Count > 0)
             {
                 label37.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][1].ToString()) ? label37.Text : label37.Text + "   " + dtDogDamGGP2.Rows[0][1].ToString();
-                label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][7].ToString()) ? label36.Text : label36.Text + "   " + dtDogDamGGP2.Rows[0][7].ToString();
+                label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][6].ToString()) ? label36.Text : label36.Text + "   " + dtDogDamGGP2.Rows[0][6].ToString();
                 label35.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][4].ToString()) ? label35.Text : label35.Text + "   " + dtDogDamGGP2.Rows[0][4].ToString();
             }
             #endregion
@@ -688,7 +688,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGGP3.Rows.Count > 0)
             {
                 label46.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][1].ToString()) ? label46.Text : label46.Text + "   " + dtDogSireGGP3.Rows[0][1].ToString();
-                label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][7].ToString()) ? label45.Text : label45.Text + "   " + dtDogSireGGP3.Rows[0][7].ToString();
+                label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][6].ToString()) ? label45.Text : label45.Text + "   " + dtDogSireGGP3.Rows[0][6].ToString();
                 label44.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][4].ToString()) ? label44.Text : label44.Text + "   " + dtDogSireGGP3.Rows[0][4].ToString();
             }
             #endregion
@@ -737,7 +737,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGGP3.Rows.Count > 0)
             {
                 label43.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][1].ToString()) ? label43.Text : label43.Text + "   " + dtDogDamGGP3.Rows[0][1].ToString();
-                label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][7].ToString()) ? label42.Text : label42.Text + "   " + dtDogDamGGP3.Rows[0][7].ToString();
+                label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][6].ToString()) ? label42.Text : label42.Text + "   " + dtDogDamGGP3.Rows[0][6].ToString();
                 label41.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][4].ToString()) ? label41.Text : label41.Text + "   " + dtDogDamGGP3.Rows[0][4].ToString();
             }
             #endregion
@@ -786,7 +786,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogSireGGP4.Rows.Count > 0)
             {
                 label52.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][1].ToString()) ? label52.Text : label52.Text + "   " + dtDogSireGGP4.Rows[0][1].ToString();
-                label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][7].ToString()) ? label51.Text : label51.Text + "   " + dtDogSireGGP4.Rows[0][7].ToString();
+                label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][6].ToString()) ? label51.Text : label51.Text + "   " + dtDogSireGGP4.Rows[0][6].ToString();
                 label50.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][4].ToString()) ? label50.Text : label50.Text + "   " + dtDogSireGGP4.Rows[0][4].ToString();
             }
             #endregion
@@ -835,7 +835,7 @@ namespace PABR_PedigreeChartGenerator
             if (dtDogDamGGP4.Rows.Count > 0)
             {
                 label49.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][1].ToString()) ? label49.Text : label49.Text + "   " + dtDogDamGGP4.Rows[0][1].ToString();
-                label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][7].ToString()) ? label48.Text : label48.Text + "   " + dtDogDamGGP4.Rows[0][7].ToString();
+                label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][6].ToString()) ? label48.Text : label48.Text + "   " + dtDogDamGGP4.Rows[0][6].ToString();
                 label47.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][4].ToString()) ? label47.Text : label47.Text + "   " + dtDogDamGGP4.Rows[0][4].ToString();
             }
             #endregion
@@ -907,11 +907,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSire.Rows.Count > 0)
                 {
                     label14.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][1].ToString()) ? label14.Text : "Name:   " + dtDogSire.Rows[0][1].ToString();
-                    label13.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][7].ToString()) ? label13.Text : "Registry No.:   " + dtDogSire.Rows[0][7].ToString();
+                    label13.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][6].ToString()) ? label13.Text : "Registry No.:   " + dtDogSire.Rows[0][6].ToString();
                     label12.Text = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][4].ToString()) ? label12.Text : "Color:   " + dtDogSire.Rows[0][4].ToString();
 
-                    GrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][10].ToString());
-                    GrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][9].ToString());
+                    GrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][9].ToString());
+                    GrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSire.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSire.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -959,11 +959,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGP1.Rows.Count > 0)
                 {
                     label19.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][1].ToString()) ? label19.Text : "Name:   " + dtDogSireGP1.Rows[0][1].ToString();
-                    label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][7].ToString()) ? label18.Text : "Registry No.:   " + dtDogSireGP1.Rows[0][7].ToString();
+                    label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][6].ToString()) ? label18.Text : "Registry No.:   " + dtDogSireGP1.Rows[0][6].ToString();
                     label17.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][4].ToString()) ? label17.Text : "Color:   " + dtDogSireGP1.Rows[0][4].ToString();
 
-                    GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][10].ToString());
-                    GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                    GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                    GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1011,11 +1011,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGP1.Rows.Count > 0)
                 {
                     label22.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][1].ToString()) ? label22.Text : "Name:   " + dtDogDamGP1.Rows[0][1].ToString();
-                    label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][7].ToString()) ? label21.Text : "Registry No.:   " + dtDogDamGP1.Rows[0][7].ToString();
+                    label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][6].ToString()) ? label21.Text : "Registry No.:   " + dtDogDamGP1.Rows[0][6].ToString();
                     label20.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][4].ToString()) ? label20.Text : "Color:   " + dtDogDamGP1.Rows[0][4].ToString();
 
-                    GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][10].ToString());
-                    GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                    GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                    GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1063,7 +1063,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP1.Rows.Count > 0)
                 {
                     label34.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][1].ToString()) ? label34.Text : "Name:   " + dtDogSireGGP1.Rows[0][1].ToString();
-                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][7].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][7].ToString();
+                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][6].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][6].ToString();
                     label32.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][4].ToString()) ? label32.Text : "Color:   " + dtDogSireGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1112,7 +1112,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP1.Rows.Count > 0)
                 {
                     label31.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][1].ToString()) ? label31.Text : "Name:   " + dtDogDamGGP1.Rows[0][1].ToString();
-                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][7].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][7].ToString();
+                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][6].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][6].ToString();
                     label29.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][4].ToString()) ? label29.Text : "Color:   " + dtDogDamGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1161,7 +1161,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP2.Rows.Count > 0)
                 {
                     label40.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][1].ToString()) ? label40.Text : "Name:   " + dtDogSireGGP2.Rows[0][1].ToString();
-                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][7].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][7].ToString();
+                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][6].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][6].ToString();
                     label38.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][4].ToString()) ? label38.Text : "Color:   " + dtDogSireGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1210,7 +1210,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP2.Rows.Count > 0)
                 {
                     label37.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][1].ToString()) ? label37.Text : "Name:   " + dtDogDamGGP2.Rows[0][1].ToString();
-                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][7].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][7].ToString();
+                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][6].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][6].ToString();
                     label35.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][4].ToString()) ? label35.Text : "Color:   " + dtDogDamGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1280,11 +1280,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDam.Rows.Count > 0)
                 {
                     label16.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][1].ToString()) ? label16.Text : "Name:   " + dtDogDam.Rows[0][1].ToString();
-                    label15.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][7].ToString()) ? label15.Text : "Registry No.:   " + dtDogDam.Rows[0][7].ToString();
+                    label15.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][6].ToString()) ? label15.Text : "Registry No.:   " + dtDogDam.Rows[0][6].ToString();
                     label11.Text = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][4].ToString()) ? label11.Text : "Color:   " + dtDogDam.Rows[0][4].ToString();
 
-                    GrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][10].ToString());
-                    GrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][9].ToString());
+                    GrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][9].ToString());
+                    GrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDam.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDam.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1332,11 +1332,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGP2.Rows.Count > 0)
                 {
                     label28.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][1].ToString()) ? label28.Text : "Name:   " + dtDogSireGP2.Rows[0][1].ToString();
-                    label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][7].ToString()) ? label27.Text : "Registry No.:   " + dtDogSireGP2.Rows[0][7].ToString();
+                    label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][6].ToString()) ? label27.Text : "Registry No.:   " + dtDogSireGP2.Rows[0][6].ToString();
                     label26.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][4].ToString()) ? label26.Text : "Color:   " + dtDogSireGP2.Rows[0][4].ToString();
 
-                    GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][10].ToString());
-                    GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                    GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                    GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1384,11 +1384,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGP2.Rows.Count > 0)
                 {
                     label25.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][1].ToString()) ? label25.Text : "Name:   " + dtDogDamGP2.Rows[0][1].ToString();
-                    label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][7].ToString()) ? label24.Text : "Registry No.:   " + dtDogDamGP2.Rows[0][7].ToString();
+                    label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][6].ToString()) ? label24.Text : "Registry No.:   " + dtDogDamGP2.Rows[0][6].ToString();
                     label23.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][4].ToString()) ? label23.Text : "Color:   " + dtDogDamGP2.Rows[0][4].ToString();
 
-                    GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][10].ToString());
-                    GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                    GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                    GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1436,7 +1436,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP3.Rows.Count > 0)
                 {
                     label46.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][1].ToString()) ? label46.Text : "Name:   " + dtDogSireGGP3.Rows[0][1].ToString();
-                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][7].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][7].ToString();
+                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][6].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][6].ToString();
                     label44.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][4].ToString()) ? label44.Text : "Color:   " + dtDogSireGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1485,7 +1485,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP3.Rows.Count > 0)
                 {
                     label43.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][1].ToString()) ? label43.Text : "Name:   " + dtDogDamGGP3.Rows[0][1].ToString();
-                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][7].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][7].ToString();
+                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][6].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][6].ToString();
                     label41.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][4].ToString()) ? label41.Text : "Color:   " + dtDogDamGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1534,7 +1534,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP4.Rows.Count > 0)
                 {
                     label52.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][1].ToString()) ? label52.Text : "Name:   " + dtDogSireGGP4.Rows[0][1].ToString();
-                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][7].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][7].ToString();
+                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][6].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][6].ToString();
                     label50.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][4].ToString()) ? label50.Text : "Color:   " + dtDogSireGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1583,7 +1583,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP4.Rows.Count > 0)
                 {
                     label49.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][1].ToString()) ? label49.Text : "Name:   " + dtDogDamGGP4.Rows[0][1].ToString();
-                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][7].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][7].ToString();
+                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][6].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][6].ToString();
                     label47.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][4].ToString()) ? label47.Text : "Color:   " + dtDogDamGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1651,11 +1651,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGP1.Rows.Count > 0)
                 {
                     label19.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][1].ToString()) ? label19.Text : "Name:   " + dtDogSireGP1.Rows[0][1].ToString();
-                    label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][7].ToString()) ? label18.Text : "Registry No.:   " + dtDogSireGP1.Rows[0][7].ToString();
+                    label18.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][6].ToString()) ? label18.Text : "Registry No.:   " + dtDogSireGP1.Rows[0][6].ToString();
                     label17.Text = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][4].ToString()) ? label17.Text : "Color:   " + dtDogSireGP1.Rows[0][4].ToString();
 
-                    GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][10].ToString());
-                    GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                    GGrandParentSire1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][9].ToString());
+                    GGrandParentDam1 = string.IsNullOrWhiteSpace(dtDogSireGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP1.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1703,7 +1703,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP1.Rows.Count > 0)
                 {
                     label34.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][1].ToString()) ? label34.Text : "Name:   " + dtDogSireGGP1.Rows[0][1].ToString();
-                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][7].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][7].ToString();
+                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][6].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][6].ToString();
                     label32.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][4].ToString()) ? label32.Text : "Color:   " + dtDogSireGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1752,7 +1752,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP1.Rows.Count > 0)
                 {
                     label31.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][1].ToString()) ? label31.Text : "Name:   " + dtDogDamGGP1.Rows[0][1].ToString();
-                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][7].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][7].ToString();
+                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][6].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][6].ToString();
                     label29.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][4].ToString()) ? label29.Text : "Color:   " + dtDogDamGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1820,11 +1820,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGP1.Rows.Count > 0)
                 {
                     label22.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][1].ToString()) ? label22.Text : "Name:   " + dtDogDamGP1.Rows[0][1].ToString();
-                    label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][7].ToString()) ? label21.Text : "Registry No.:   " + dtDogDamGP1.Rows[0][7].ToString();
+                    label21.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][6].ToString()) ? label21.Text : "Registry No.:   " + dtDogDamGP1.Rows[0][6].ToString();
                     label20.Text = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][4].ToString()) ? label20.Text : "Color:   " + dtDogDamGP1.Rows[0][4].ToString();
 
-                    GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][10].ToString());
-                    GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                    GGrandParentSire2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][9].ToString());
+                    GGrandParentDam2 = string.IsNullOrWhiteSpace(dtDogDamGP1.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP1.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -1872,7 +1872,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP2.Rows.Count > 0)
                 {
                     label40.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][1].ToString()) ? label40.Text : "Name:   " + dtDogSireGGP2.Rows[0][1].ToString();
-                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][7].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][7].ToString();
+                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][6].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][6].ToString();
                     label38.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][4].ToString()) ? label38.Text : "Color:   " + dtDogSireGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1921,7 +1921,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP2.Rows.Count > 0)
                 {
                     label37.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][1].ToString()) ? label37.Text : "Name:   " + dtDogDamGGP2.Rows[0][1].ToString();
-                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][7].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][7].ToString();
+                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][6].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][6].ToString();
                     label35.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][4].ToString()) ? label35.Text : "Color:   " + dtDogDamGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -1990,11 +1990,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGP2.Rows.Count > 0)
                 {
                     label28.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][1].ToString()) ? label28.Text : "Name:   " + dtDogSireGP2.Rows[0][1].ToString();
-                    label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][7].ToString()) ? label27.Text : "Registry No.:   " + dtDogSireGP2.Rows[0][7].ToString();
+                    label27.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][6].ToString()) ? label27.Text : "Registry No.:   " + dtDogSireGP2.Rows[0][6].ToString();
                     label26.Text = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][4].ToString()) ? label26.Text : "Color:   " + dtDogSireGP2.Rows[0][4].ToString();
 
-                    GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][10].ToString());
-                    GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                    GGrandParentSire3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][9].ToString());
+                    GGrandParentDam3 = string.IsNullOrWhiteSpace(dtDogSireGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogSireGP2.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -2042,7 +2042,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP3.Rows.Count > 0)
                 {
                     label46.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][1].ToString()) ? label46.Text : "Name:   " + dtDogSireGGP3.Rows[0][1].ToString();
-                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][7].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][7].ToString();
+                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][6].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][6].ToString();
                     label44.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][4].ToString()) ? label44.Text : "Color:   " + dtDogSireGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2091,7 +2091,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP3.Rows.Count > 0)
                 {
                     label43.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][1].ToString()) ? label43.Text : "Name:   " + dtDogDamGGP3.Rows[0][1].ToString();
-                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][7].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][7].ToString();
+                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][6].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][6].ToString();
                     label41.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][4].ToString()) ? label41.Text : "Color:   " + dtDogDamGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2162,11 +2162,11 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGP2.Rows.Count > 0)
                 {
                     label25.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][1].ToString()) ? label25.Text : "Name:   " + dtDogDamGP2.Rows[0][1].ToString();
-                    label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][7].ToString()) ? label24.Text : "Registry No.:   " + dtDogDamGP2.Rows[0][7].ToString();
+                    label24.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][6].ToString()) ? label24.Text : "Registry No.:   " + dtDogDamGP2.Rows[0][6].ToString();
                     label23.Text = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][4].ToString()) ? label23.Text : "Color:   " + dtDogDamGP2.Rows[0][4].ToString();
 
-                    GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][10].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][10].ToString());
-                    GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                    GGrandParentSire4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][9].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][9].ToString());
+                    GGrandParentDam4 = string.IsNullOrWhiteSpace(dtDogDamGP2.Rows[0][8].ToString()) ? 0 : int.Parse(dtDogDamGP2.Rows[0][8].ToString());
                 }
                 #endregion
 
@@ -2214,7 +2214,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP4.Rows.Count > 0)
                 {
                     label52.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][1].ToString()) ? label52.Text : "Name:   " + dtDogSireGGP4.Rows[0][1].ToString();
-                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][7].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][7].ToString();
+                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][6].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][6].ToString();
                     label50.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][4].ToString()) ? label50.Text : "Color:   " + dtDogSireGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2263,7 +2263,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP4.Rows.Count > 0)
                 {
                     label49.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][1].ToString()) ? label49.Text : "Name:   " + dtDogDamGGP4.Rows[0][1].ToString();
-                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][7].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][7].ToString();
+                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][6].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][6].ToString();
                     label47.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][4].ToString()) ? label47.Text : "Color:   " + dtDogDamGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2329,7 +2329,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP1.Rows.Count > 0)
                 {
                     label34.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][1].ToString()) ? label34.Text : "Name:   " + dtDogSireGGP1.Rows[0][1].ToString();
-                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][7].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][7].ToString();
+                    label33.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][6].ToString()) ? label33.Text : "Registry No.:   " + dtDogSireGGP1.Rows[0][6].ToString();
                     label32.Text = string.IsNullOrWhiteSpace(dtDogSireGGP1.Rows[0][4].ToString()) ? label32.Text : "Color:   " + dtDogSireGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2395,7 +2395,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP1.Rows.Count > 0)
                 {
                     label31.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][1].ToString()) ? label31.Text : "Name:   " + dtDogDamGGP1.Rows[0][1].ToString();
-                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][7].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][7].ToString();
+                    label30.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][6].ToString()) ? label30.Text : "Registry No.:   " + dtDogDamGGP1.Rows[0][6].ToString();
                     label29.Text = string.IsNullOrWhiteSpace(dtDogDamGGP1.Rows[0][4].ToString()) ? label29.Text : "Color:   " + dtDogDamGGP1.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2461,7 +2461,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP2.Rows.Count > 0)
                 {
                     label40.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][1].ToString()) ? label40.Text : "Name:   " + dtDogSireGGP2.Rows[0][1].ToString();
-                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][7].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][7].ToString();
+                    label39.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][6].ToString()) ? label39.Text : "Registry No.:   " + dtDogSireGGP2.Rows[0][6].ToString();
                     label38.Text = string.IsNullOrWhiteSpace(dtDogSireGGP2.Rows[0][4].ToString()) ? label38.Text : "Color:   " + dtDogSireGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2527,7 +2527,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP2.Rows.Count > 0)
                 {
                     label37.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][1].ToString()) ? label37.Text : "Name:   " + dtDogDamGGP2.Rows[0][1].ToString();
-                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][7].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][7].ToString();
+                    label36.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][6].ToString()) ? label36.Text : "Registry No.:   " + dtDogDamGGP2.Rows[0][6].ToString();
                     label35.Text = string.IsNullOrWhiteSpace(dtDogDamGGP2.Rows[0][4].ToString()) ? label35.Text : "Color:   " + dtDogDamGGP2.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2593,7 +2593,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP3.Rows.Count > 0)
                 {
                     label46.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][1].ToString()) ? label46.Text : "Name:   " + dtDogSireGGP3.Rows[0][1].ToString();
-                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][7].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][7].ToString();
+                    label45.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][6].ToString()) ? label45.Text : "Registry No.:   " + dtDogSireGGP3.Rows[0][6].ToString();
                     label44.Text = string.IsNullOrWhiteSpace(dtDogSireGGP3.Rows[0][4].ToString()) ? label44.Text : "Color:   " + dtDogSireGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2659,7 +2659,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP3.Rows.Count > 0)
                 {
                     label43.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][1].ToString()) ? label43.Text : "Name:   " + dtDogDamGGP3.Rows[0][1].ToString();
-                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][7].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][7].ToString();
+                    label42.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][6].ToString()) ? label42.Text : "Registry No.:   " + dtDogDamGGP3.Rows[0][6].ToString();
                     label41.Text = string.IsNullOrWhiteSpace(dtDogDamGGP3.Rows[0][4].ToString()) ? label41.Text : "Color:   " + dtDogDamGGP3.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2725,7 +2725,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogSireGGP4.Rows.Count > 0)
                 {
                     label52.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][1].ToString()) ? label52.Text : "Name:   " + dtDogSireGGP4.Rows[0][1].ToString();
-                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][7].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][7].ToString();
+                    label51.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][6].ToString()) ? label51.Text : "Registry No.:   " + dtDogSireGGP4.Rows[0][6].ToString();
                     label50.Text = string.IsNullOrWhiteSpace(dtDogSireGGP4.Rows[0][4].ToString()) ? label50.Text : "Color:   " + dtDogSireGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2791,7 +2791,7 @@ namespace PABR_PedigreeChartGenerator
                 if (dtDogDamGGP4.Rows.Count > 0)
                 {
                     label49.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][1].ToString()) ? label49.Text : "Name:   " + dtDogDamGGP4.Rows[0][1].ToString();
-                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][7].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][7].ToString();
+                    label48.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][6].ToString()) ? label48.Text : "Registry No.:   " + dtDogDamGGP4.Rows[0][6].ToString();
                     label47.Text = string.IsNullOrWhiteSpace(dtDogDamGGP4.Rows[0][4].ToString()) ? label47.Text : "Color:   " + dtDogDamGGP4.Rows[0][4].ToString();
                 }
                 #endregion
@@ -2905,7 +2905,7 @@ namespace PABR_PedigreeChartGenerator
             this.Dispose();
         }
 
-        private bool UpdatePerformancePedigree(int DogID, int DamID, int SireID)
+        private bool UpdatePerformancePedigree(int DogID, int SireID, int DamID)
         {
             bool result = false;
 

@@ -42,24 +42,34 @@ namespace PABR_PedigreeChartGenerator
                 }
             }
 
-            if (!allTextboxesFilled)
+            if(string.IsNullOrWhiteSpace(textBox6.Text.Trim()))
             {
-                firstEmptyTextBox.Focus();
-                MessageBox.Show("Don't leave any blank.", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox6.Focus();
+                MessageBox.Show("PABR Registration Number is required.", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (isNullOrEmpty)
-            {
-                button3.Focus();
-                MessageBox.Show("Upload dog picture.", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (!allTextboxesFilled)
+            //{
+            //    firstEmptyTextBox.Focus();
+            //    MessageBox.Show("Don't leave any blank.", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //if (isNullOrEmpty)
+            //{
+            //    button3.Focus();
+            //    MessageBox.Show("Upload dog picture.", "Sytem Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
             bool isInserted = AddDogDetails();
 
             if (isInserted)
             {
                 MessageBox.Show("Dog registered.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Unable to add dog.\nPABRNo. " + textBox6.Text.Trim() + " already exists.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             this.Hide();
         }
@@ -101,108 +111,93 @@ namespace PABR_PedigreeChartGenerator
         {
             bool res = false, uploadSuccess = false;
             string fileName = string.Empty;
+            bool isNullOrEmpty = pictureBox1 == null || pictureBox1.Image == null;
 
-            //Upload Dog Picture to get filename
-            using (var client = new HttpClient())
+            if (!isNullOrEmpty)
             {
-                client.BaseAddress = new Uri("https://pabrdexapi.com");
-                //client.BaseAddress = new Uri("https://localhost:7060/");
-                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
-
-                using (var content = new MultipartFormDataContent())
+                //Upload Dog Picture to get filename
+                using (var client = new HttpClient())
                 {
-                    // Convert the image to a byte array
-                    //byte[] imageData;
-                    //using (var ms = new MemoryStream())
-                    //{
-                    //    pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
-                    //    imageData = ms.ToArray();
-                    //}
+                    client.BaseAddress = new Uri("https://pabrdexapi.com");
+                    //client.BaseAddress = new Uri("https://localhost:7060/");
+                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
 
-                    //// Add the image data to the request body as a ByteArrayContent
-                    //var imageContent = new ByteArrayContent(imageData);
-                    //content.Add(imageContent, "file", fn);
-
-                    // Convert the image to a byte array
-                    byte[] imageData;
-                    using (var ms = new MemoryStream())
+                    using (var content = new MultipartFormDataContent())
                     {
-                        pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
-                        imageData = ms.ToArray();
-                    }
 
-                    // Add the image data to the request body as a ByteArrayContent
-                    var imageContent = new ByteArrayContent(imageData);
+                        // Convert the image to a byte array
+                        byte[] imageData;
+                        using (var ms = new MemoryStream())
+                        {
+                            pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
+                            imageData = ms.ToArray();
+                        }
 
-                    imageContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
-                    content.Add(imageContent, "file", Path.GetFileName(fn));
+                        // Add the image data to the request body as a ByteArrayContent
+                        var imageContent = new ByteArrayContent(imageData);
 
-                    // Make the POST request to the web API endpoint
-                    var response = client.PostAsync("api/PedigreeChart/upload-dog-picture", content).Result;
+                        imageContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
+                        content.Add(imageContent, "file", Path.GetFileName(fn));
 
-                    var resp = response.Content.ReadAsStringAsync();
-                    var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
-                    var status = responseJson.status;
-                    var title = responseJson.title;
+                        // Make the POST request to the web API endpoint
+                        var response = client.PostAsync("api/PedigreeChart/upload-dog-picture", content).Result;
+
+                        var resp = response.Content.ReadAsStringAsync();
+                        var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                        var status = responseJson.status;
+                        var title = responseJson.title;
 
 
-                    // Check the response status code and handle any errors
-                    if (status == "error")
-                    {
-                        uploadSuccess = false;
-                    }
-                    else if (status == "success" && title == "Uploaded Successfully")
-                    {
-                        var imgName = responseJson.imgName;
-                        fileName = imgName;
-                        uploadSuccess = true;
+                        // Check the response status code and handle any errors
+                        if (status == "error")
+                        {
+                            uploadSuccess = false;
+                        }
+                        else if (status == "success" && title == "Uploaded Successfully")
+                        {
+                            var imgName = responseJson.imgName;
+                            fileName = imgName;
+                            uploadSuccess = true;
+                        }
                     }
                 }
             }
+
             //Insert to DB
-            if (uploadSuccess)
+            using (var httpClient = new HttpClient())
             {
-
-                using (var httpClient = new HttpClient())
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var dogParams = new
                 {
-                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
-                    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
-                    var dogParams = new
-                    {
-                        dogName = textBox1.Text.Trim(),
-                        //gender = textBox2.Text.Trim(),
-                        gender = (comboBox1.SelectedIndex == 0) ? "M" : "F",
-                        breed = textBox3.Text.Trim(),
-                        color = textBox4.Text.Trim(),
-                        ownerName = textBox5.Text.Trim(),
-                        pabrNo = textBox6.Text.Trim(),
-                        registryNo = textBox7.Text.Trim(),
-                        picURL = fileName
-                    };
-                    var json = JsonConvert.SerializeObject(dogParams);
-                    var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var response = httpClient.PostAsync("api/PedigreeChart/AddDog", content).Result;
+                    dogName = textBox1.Text.Trim(),
+                    //gender = textBox2.Text.Trim(),
+                    gender = (comboBox1.SelectedIndex == 0) ? "M" : "F",
+                    breed = textBox3.Text.Trim(),
+                    color = textBox4.Text.Trim(),
+                    ownerName = textBox5.Text.Trim(),
+                    pabrNo = textBox6.Text.Trim(),
+                    picURL = fileName
+                };
+                var json = JsonConvert.SerializeObject(dogParams);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = httpClient.PostAsync("api/PedigreeChart/AddDog", content).Result;
 
-                    var resp = response.Content.ReadAsStringAsync();
+                var resp = response.Content.ReadAsStringAsync();
 
-                    var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
-                    var status = responseJson.status;
-                    var title = responseJson.title;
+                var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                var status = responseJson.status;
+                var title = responseJson.title;
 
-                    if (status == "error" && title == "Dog Not Registered")
-                    {
-                        res = false;
-                    }
-                    else if (status == "success" && title == "Dog Registered")
-                    {
-                        res = true;
-                        var msg = responseJson.message;
-                    }
+                if (status == "error" && title == "Dog Not Registered")
+                {
+                    res = false;
                 }
-            }
-            else
-            {
-                res = false;
+                else if (status == "success" && title == "Dog Registered")
+                {
+                    res = true;
+                    var msg = responseJson.message;
+                }
             }
 
             return res;

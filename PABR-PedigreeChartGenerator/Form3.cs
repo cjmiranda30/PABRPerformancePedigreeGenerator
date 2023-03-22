@@ -105,11 +105,10 @@ namespace PABR_PedigreeChartGenerator
             dataGridView1.Columns[4].HeaderText = "Color";
             dataGridView1.Columns[5].HeaderText = "Owner Name";
             dataGridView1.Columns[6].HeaderText = "PABR No.";
-            dataGridView1.Columns[7].HeaderText = "Registry No.";
-            dataGridView1.Columns[8].HeaderText = "Date Added";
-            dataGridView1.Columns[9].HeaderText = "PictureURL";
+            dataGridView1.Columns[7].HeaderText = "Date Added";
+            dataGridView1.Columns[8].HeaderText = "PictureURL";
 
-            dataGridView1.Columns[9].Visible = false; //PictureURL
+            dataGridView1.Columns[8].Visible = false; //PictureURL
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -118,8 +117,7 @@ namespace PABR_PedigreeChartGenerator
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -214,15 +212,21 @@ namespace PABR_PedigreeChartGenerator
                 CurSelectedDog.Color = values[4];
                 CurSelectedDog.OwnerName = values[5];
                 CurSelectedDog.PABRno = values[6];
-                CurSelectedDog.RegistryNo = values[7];
-                CurSelectedDog.DateAdded = values[8];
-                CurSelectedDog.PicURL = values[9];
+                CurSelectedDog.DateAdded = values[7];
+                CurSelectedDog.PicURL = values[8];
 
                 Form6 f6 = new Form6();
                 f6.Show();
 
                 //LoadDataGridView();
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form8 f8 = new Form8();
+            f8.ShowDialog();
+            LoadDataGridView();
         }
     }
 }

@@ -50,7 +50,6 @@ namespace PABR_PedigreeChartGenerator
                 label6.Text = "Color: N/A";
                 label5.Text = "Owner: N/A";
                 label4.Text = "PABR No.: N/A";
-                label9.Text = "Registry No.: N/A";
 
                 pictureBox1.Image = null;
                 label7.Text = "";
@@ -92,7 +91,7 @@ namespace PABR_PedigreeChartGenerator
 
                     if (dtDog.Rows.Count > 0)
                     {
-                        if (category.Contains("Sire"))
+                        if (category.Contains("Sire"))//MALE
                         {
                             groupBox1.Text = "Sire List/s:";
 
@@ -105,7 +104,7 @@ namespace PABR_PedigreeChartGenerator
                                 }
                             }
                         }
-                        else if (category.Contains("Dam"))
+                        else if (category.Contains("Dam"))//FEMALE
                         {
                             groupBox1.Text = "Dam List/s:";
 
@@ -166,7 +165,6 @@ namespace PABR_PedigreeChartGenerator
                 label6.Text = "Color:";
                 label5.Text = "Owner:";
                 label4.Text = "PABR No.:";
-                label9.Text = "Registry No.:";
 
                 pictureBox1.Image = null;
                 label7.Text = "Loading.. Please wait:";
@@ -225,27 +223,36 @@ namespace PABR_PedigreeChartGenerator
                 label6.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][4].ToString()) ? label6.Text : label6.Text + "   " + dtDog.Rows[0][4].ToString();
                 label5.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][5].ToString()) ? label5.Text : label5.Text + "   " + dtDog.Rows[0][5].ToString();
                 label4.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][6].ToString()) ? label4.Text : label4.Text + "   " + dtDog.Rows[0][6].ToString();
-                label9.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][7].ToString()) ? label9.Text : label9.Text + "   " + dtDog.Rows[0][7].ToString();
 
-                string picurl = string.IsNullOrWhiteSpace(dtDog.Rows[0][8].ToString()) ? "" : dtDog.Rows[0][8].ToString();
+                string picurl = string.IsNullOrWhiteSpace(dtDog.Rows[0][7].ToString()) ? "" : dtDog.Rows[0][7].ToString();
 
-                using (var httpClient = new HttpClient())
+                //using (var httpClient = new HttpClient())
+                //{
+                //    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                //    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //    var response = await httpClient.PostAsync("api/PedigreeChart/download-dog-picture?fileName=" + picurl, null);
+
+
+                //    // Get the FileStream from the response content
+                //    var stream = await response.Content.ReadAsStreamAsync();
+
+                //    // Load the image from the stream into a Bitmap object
+                //    var image = new Bitmap(stream);
+
+                //    // Display the image in the PictureBox control
+                //    pictureBox1.Image = image;
+                //}
+                //label7.Text = string.Empty;
+
+                if (!string.IsNullOrWhiteSpace(picurl))
                 {
-                    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
-                    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
-                    var response = await httpClient.PostAsync("api/PedigreeChart/download-dog-picture?fileName=" + picurl, null);
-
-
-                    // Get the FileStream from the response content
-                    var stream = await response.Content.ReadAsStreamAsync();
-
-                    // Load the image from the stream into a Bitmap object
-                    var image = new Bitmap(stream);
-
-                    // Display the image in the PictureBox control
-                    pictureBox1.Image = image;
+                    pictureBox1.Load("https://pabrdex.com/images/" + picurl);
+                    label7.Text = string.Empty;
                 }
-                label7.Text = string.Empty;
+                else
+                {
+                    label7.Text = "No uploaded picture.";
+                }
             }
             #endregion
 

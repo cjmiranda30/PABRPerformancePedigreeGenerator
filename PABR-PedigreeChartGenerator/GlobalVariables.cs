@@ -90,7 +90,7 @@ namespace PABR_PedigreeChartGenerator
         public static string? PColor = "";
         public static string? POwnerName = "";
         public static string? PPABRno = "";
-        public static string? PRegistryNo = "";
+        //public static string? PRegistryNo = "";
         public static string? PDateAdded = "";
         public static string? PPicURL = "";
 
@@ -171,17 +171,17 @@ namespace PABR_PedigreeChartGenerator
                 PPABRno = value;
             }
         }
-        public static string? RegistryNo
-        {
-            get
-            {
-                return PRegistryNo;
-            }
-            set
-            {
-                PRegistryNo = value;
-            }
-        }
+        //public static string? RegistryNo
+        //{
+        //    get
+        //    {
+        //        return PRegistryNo;
+        //    }
+        //    set
+        //    {
+        //        PRegistryNo = value;
+        //    }
+        //}
         public static string? DateAdded
         {
             get
