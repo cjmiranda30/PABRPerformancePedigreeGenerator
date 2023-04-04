@@ -223,6 +223,7 @@ namespace PABR_PedigreeChartGenerator
                 label6.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][4].ToString()) ? label6.Text : label6.Text + "   " + dtDog.Rows[0][4].ToString();
                 label5.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][5].ToString()) ? label5.Text : label5.Text + "   " + dtDog.Rows[0][5].ToString();
                 label4.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][6].ToString()) ? label4.Text : label4.Text + "   " + dtDog.Rows[0][6].ToString();
+                label8.Text = string.IsNullOrWhiteSpace(dtDog.Rows[0][12].ToString()) ? label8.Text : label8.Text + "   " + dtDog.Rows[0][12].ToString();
 
                 string picurl = string.IsNullOrWhiteSpace(dtDog.Rows[0][7].ToString()) ? "" : dtDog.Rows[0][7].ToString();
 

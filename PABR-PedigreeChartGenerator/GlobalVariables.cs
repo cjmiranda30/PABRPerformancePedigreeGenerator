@@ -14,6 +14,7 @@ namespace PABR_PedigreeChartGenerator
         public static string? PuserEmail = "";
         public static string? PuserFName = "";
         public static string? PuserLName = "";
+        public static string? PuserPW = "";
 
         public static string? accessToken
         {
@@ -70,6 +71,17 @@ namespace PABR_PedigreeChartGenerator
                 PuserLName = value;
             }
         }
+        public static string? userPW
+        {
+            get
+            {
+                return PuserPW;
+            }
+            set
+            {
+                PuserPW = value;
+            }
+        }
         public static void ClearProperties()
         {
             // Loop through the static properties of the model
@@ -88,6 +100,7 @@ namespace PABR_PedigreeChartGenerator
         public static string? PGender = "";
         public static string? PBreed = "";
         public static string? PColor = "";
+        public static string? PDoB = "";
         public static string? POwnerName = "";
         public static string? PPABRno = "";
         //public static string? PRegistryNo = "";
@@ -147,6 +160,18 @@ namespace PABR_PedigreeChartGenerator
             set
             {
                 PColor = value;
+            }
+        }
+
+        public static string? DoB
+        {
+            get
+            {
+                return PDoB;
+            }
+            set
+            {
+                PDoB = value;
             }
         }
         public static string? OwnerName

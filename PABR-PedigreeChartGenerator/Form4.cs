@@ -18,6 +18,7 @@ namespace PABR_PedigreeChartGenerator
     public partial class Form4 : Form
     {
         private bool isPicChanged = false;
+        private bool isPicRemoved = false;
         public string fn = string.Empty;
         public Form4()
         {
@@ -26,13 +27,6 @@ namespace PABR_PedigreeChartGenerator
         }
         private async void loadDogDetails()
         {
-            //label1.Text = label1.Text + " " + CurSelectedDog.DogName.Trim();
-            //label2.Text = (CurSelectedDog.Gender.Trim() == "M") ? label2.Text + " " +  "MALE" : label2.Text + " " + "FEMALE";
-            //label3.Text = label3.Text + " " + CurSelectedDog.Breed.Trim();
-            //label6.Text = label6.Text + " " + CurSelectedDog.Color.Trim();
-            //label5.Text = label5.Text + " " + CurSelectedDog.OwnerName.Trim();
-            //label4.Text = label4.Text + " " + CurSelectedDog.PABRno.Trim();
-            //label8.Text = label8.Text + " " + CurSelectedDog.DateAdded.Trim();
 
             textBox1.Text = CurSelectedDog.DogName.Trim();
             comboBox1.SelectedIndex= (CurSelectedDog.Gender.Trim() == "M") ? 0: 1;
@@ -42,31 +36,27 @@ namespace PABR_PedigreeChartGenerator
             textBox5.Text = CurSelectedDog.PABRno.Trim();
             label8.Text = label8.Text + " " + CurSelectedDog.DateAdded.Trim();
 
+            try
+            {
+                DateTime dateValue = DateTime.ParseExact(CurSelectedDog.DoB, "MM-dd-yyyy", null);
+                dateTimePicker1.Value = dateValue;
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = "MMMM d, yyyy";
+            }
+            catch
+            {
+            }
 
-            //using (var httpClient = new HttpClient())
-            //{
-            //    httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
-            //    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
-            //    var response = await httpClient.PostAsync("api/PedigreeChart/download-dog-picture?fileName=" + CurSelectedDog.PicURL, null);
-
-
-            //    // Get the FileStream from the response content
-            //    var stream = await response.Content.ReadAsStreamAsync();
-
-            //    // Load the image from the stream into a Bitmap object
-            //    var image = new Bitmap(stream);
-
-            //    // Display the image in the PictureBox control
-            //    pictureBox1.Image = image;
-            //}
             if (!string.IsNullOrWhiteSpace(CurSelectedDog.PicURL))
             {
                 pictureBox1.Load("https://pabrdex.com/images/" + CurSelectedDog.PicURL);
                 label7.Text = string.Empty;
+                button4.Visible = true;
             }
             else
             {
                 label7.Text = "No uploaded picture.";
+                button4.Visible = false;
             }
         }
 
@@ -120,10 +110,11 @@ namespace PABR_PedigreeChartGenerator
                 string pDogName = string.IsNullOrWhiteSpace(textBox1.Text.Trim()) ? "" : textBox1.Text.Trim(),
                     pGender = (comboBox1.SelectedIndex == 0) ? "M" : "F", pBreed = string.IsNullOrWhiteSpace(textBox2.Text.Trim()) ? "" : textBox2.Text.Trim(),
                     pColor = string.IsNullOrWhiteSpace(textBox3.Text.Trim()) ? "" : textBox3.Text.Trim(),
+                    pDoB = dateTimePicker1.Value.ToString("MM-dd-yyyy"),
                     pOwnerName = string.IsNullOrWhiteSpace(textBox4.Text.Trim()) ? "" : textBox4.Text.Trim(),
                     pPABRNo = string.IsNullOrWhiteSpace(textBox5.Text.Trim()) ? "" : textBox5.Text.Trim();
 
-                bool res = UpdateDogDetails(pDogID, pDogName, pGender, pBreed, pColor, pOwnerName, pPABRNo);
+                bool res = UpdateDogDetails(pDogID, pDogName, pGender, pBreed, pColor, pDoB, pOwnerName, pPABRNo);
 
                 if (res)
                     MessageBox.Show("Dog successfully updated!", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,7 +131,7 @@ namespace PABR_PedigreeChartGenerator
 
         }
 
-        private bool UpdateDogDetails(int DogID, string DogName, string Gender, string Breed, string Color, string OwnerName, string PABRNo)
+        private bool UpdateDogDetails(int DogID, string DogName, string Gender, string Breed, string Color, string DoB, string OwnerName, string PABRNo)
         {
             bool result = false;
 
@@ -197,6 +188,11 @@ namespace PABR_PedigreeChartGenerator
                     }
                 }
             }
+
+            if (isPicRemoved)
+            {
+                fileName = "Removed";
+            }
             #endregion
 
             using (var httpClient = new HttpClient())
@@ -208,11 +204,17 @@ namespace PABR_PedigreeChartGenerator
 
                 if (fileName == "")
                 {
-                    qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo;
+                    qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&DoB=" + DoB + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo;
+                }
+                else if (fileName == "Removed")
+                {
+                    string blnkVal = string.Empty;
+                    qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&DoB=" + DoB + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo + "&PicURL=" + blnkVal;
+
                 }
                 else
                 {
-                    qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo + "&PicURL=" + fileName;
+                    qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&DoB=" + DoB + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo + "&PicURL=" + fileName;
                     
                 }
 
@@ -250,7 +252,34 @@ namespace PABR_PedigreeChartGenerator
                 fn = open.FileName;
                 isPicChanged = true;
                 label7.Text = string.Empty;
+                button4.Visible = true;
+                isPicRemoved = false;
             }
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMMM d, yyyy";
+
+
+            bool isNullOrEmpty = pictureBox1 == null || pictureBox1.Image == null;
+            if (isNullOrEmpty)
+            {
+                button4.Visible = false;
+            }
+            else
+            {
+                button4.Visible = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            label7.Text = "No uploaded picture.";
+            button4.Visible = false;
+            isPicRemoved = true;
         }
     }
 }

@@ -166,15 +166,16 @@ namespace PABR_PedigreeChartGenerator
             //Insert to DB
             using (var httpClient = new HttpClient())
             {
+                string birthDate = dateTimePicker1.Value.ToString("MM-dd-yyyy"); ;
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var dogParams = new
                 {
                     dogName = textBox1.Text.Trim(),
-                    //gender = textBox2.Text.Trim(),
                     gender = (comboBox1.SelectedIndex == 0) ? "M" : "F",
                     breed = textBox3.Text.Trim(),
                     color = textBox4.Text.Trim(),
+                    doB = birthDate,
                     ownerName = textBox5.Text.Trim(),
                     pabrNo = textBox6.Text.Trim(),
                     picURL = fileName
@@ -201,6 +202,12 @@ namespace PABR_PedigreeChartGenerator
             }
 
             return res;
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMMM d, yyyy";
         }
     }
 }

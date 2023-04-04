@@ -25,6 +25,7 @@ namespace PABR_PedigreeChartGenerator
         {
             InitializeComponent();
         }
+        private bool isImageFolderNotAvailable = false;
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -49,10 +50,10 @@ namespace PABR_PedigreeChartGenerator
                 label3.Visible = false;
 
 
-                string[] accceptedColumns = { "DogName", "Gender", "Breed", "Color", "Owner", "PABRNo", "ImageName" };
+                string[] accceptedColumns = { "DogName", "Gender", "Breed", "Color", "Owner", "PABRNo", "DOB", "ImageName" };
                 string[] lines = File.ReadAllLines(filePath);
 
-                if (lines[0].Split(',').Count() != 7)
+                if (lines[0].Split(',').Count() != 8)
                 {
                     //Invalid number of columns
                     MessageBox.Show("Invalid number of required columns.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,8 +98,10 @@ namespace PABR_PedigreeChartGenerator
                 if (imageFiles.Length == 0)
                 {
                     MessageBox.Show("No images found in this folder. Please select a different folder.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox2.Text = string.Empty;
                     label4.Visible = true;
                     label4.Text = "Kindly select a valid folder";
+                    label4.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -106,6 +109,7 @@ namespace PABR_PedigreeChartGenerator
                     //Console.WriteLine($"Selected folder: {folderBrowserDialog.SelectedPath}");
                     textBox2.Text = folderBrowserDialog.SelectedPath;
                     label4.Visible = false;
+                    label4.ForeColor = Color.MediumBlue;
                 }
             }
         }
@@ -126,18 +130,27 @@ namespace PABR_PedigreeChartGenerator
                     string[] values = line.Split(',');
 
                     // Extract specific values for each row
+                    //string dogName = values[0];
+                    //string gender = values[1];
+                    //string breed = values[2];
+                    //string color = values[3];
+                    //string owner = values[4];
+                    //string pabrNo = values[5];
+                    //string imageName = values[6];
+
                     string dogName = values[0];
                     string gender = values[1];
                     string breed = values[2];
                     string color = values[3];
                     string owner = values[4];
                     string pabrNo = values[5];
-                    string imageName = values[6];
+                    string dob = values[6];
+                    string imageName = (!isImageFolderNotAvailable) ? values[7] : "";
 
-                    string fp = textBox2.Text + "/" + imageName;
+                    string fp = (!isImageFolderNotAvailable) ? textBox2.Text + "/" + imageName : "";
 
                     //Saving
-                    AddDog(dogName.Trim(), gender.Trim(), breed.Trim(), color.Trim(), owner.Trim(), pabrNo.Trim(), fp.Trim());
+                    AddDog(dogName.Trim(), gender.Trim(), breed.Trim(), color.Trim(), owner.Trim(), pabrNo.Trim(), dob.Trim(), fp.Trim());
 
                     // Update the progress bar
                     progressBar1.Value = (int)(((double)i / (double)totalRec) * 100);
@@ -155,13 +168,18 @@ namespace PABR_PedigreeChartGenerator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Specify file and folder paths", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Specify file path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
+                if(string.IsNullOrWhiteSpace(textBox2.Text))
+                {
+                    isImageFolderNotAvailable = true;
+                }
+
                 ExtractData(textBox1.Text.Trim());
                 MessageBox.Show("Batch upload successfully completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
@@ -169,16 +187,35 @@ namespace PABR_PedigreeChartGenerator
 
         }
 
-        private bool AddDog(string dogName, string gender, string breed, string color, string owner, string pabrNo, string picURL)
+        private bool AddDog(string dogName, string gender, string breed, string color, string owner, string pabrNo, string dob, string picURL)
         {
             bool res = false, uploadSuccess = false;
             string fileName = string.Empty;
+
+            gender = (gender.ToUpper().StartsWith("M")) ? "M" :
+                (gender.ToUpper().StartsWith("F")) ? "F" : "";
 
             if (string.IsNullOrWhiteSpace(pabrNo))
             {
                 res = false;
                 return res;
             }
+
+
+            if (!string.IsNullOrWhiteSpace(dob))
+            {
+                try
+                {
+                    DateTime dateValue = DateTime.Parse(dob);
+                    dob = dateValue.ToString("MM-dd-yyyy");
+                }
+                catch
+                {
+                    dob = "";
+                }
+            }
+
+            fileName = picURL.Trim();
 
             if (!string.IsNullOrWhiteSpace(fileName.Trim()))
             {
@@ -230,6 +267,8 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+
+                pointA:
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var dogParams = new
                 {
@@ -238,6 +277,7 @@ namespace PABR_PedigreeChartGenerator
                     gender = gender,
                     breed = breed,
                     color = color,
+                    dob = dob,
                     ownerName = owner,
                     pabrNo = pabrNo,
                     picURL = fileName
@@ -245,6 +285,32 @@ namespace PABR_PedigreeChartGenerator
                 var json = JsonConvert.SerializeObject(dogParams);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = httpClient.PostAsync("api/PedigreeChart/AddDog", content).Result;
+
+                //check response code
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    //call login endpoint
+                    try
+                    {
+                        Form1 f1 = new Form1();
+                        bool val = f1.IsLoginSuccess(LoginDetails.PuserEmail, LoginDetails.PuserPW);
+
+                        httpClient.DefaultRequestHeaders.Remove("Authorization");
+
+                        if (val)
+                        {
+                            goto pointA;
+                        }
+                        else
+                        {
+                            return res = false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return res = false;
+                    }
+                }
 
                 var resp = response.Content.ReadAsStringAsync();
 

@@ -8,10 +8,18 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>logo2.ico</ApplicationIcon>
+    <PackageIcon>logo2.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="logo2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\PABR-Site\templateAssets\assets\img\logo2.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

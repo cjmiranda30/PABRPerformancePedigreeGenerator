@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PABR-PedigreeChartGenerator.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PABR-PedigreeChartGenerator.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="logo2.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -54,6 +54,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="CsvHelper.dll" size="211456">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oh395MqwHOdv87ggl0L2cpWEDZZGFYe3CVUXnzSo8rY=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="logo2.ico" size="267230">
     <hash>
       <dsig:Transforms>
@@ -117,22 +126,22 @@
       <dsig:DigestValue>SBbEJ29XXk2FuAYzoN8urfKUlv4AvcM814Q+YTc73g4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PABR-PedigreeChartGenerator.deps.json" size="4623">
+  <file name="PABR-PedigreeChartGenerator.deps.json" size="5157">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>evRCFFche3/zXLaC3AHHuRuwbN8aHbVHH83YO3bSbIo=</dsig:DigestValue>
+      <dsig:DigestValue>Ugc1mLyl2H2Alg9WJvtuuyPi9OlQRWeqSU3FmeGuNow=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PABR-PedigreeChartGenerator.dll" size="2385920">
+  <file name="PABR-PedigreeChartGenerator.dll" size="2401280">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0VYWf4ZJikQCGHXqHu5FfwvoTyWF6Xx+FORjvp6IdXs=</dsig:DigestValue>
+      <dsig:DigestValue>h0a1RUIGgm/xerHwboNLtAkUrYj8Y1qi1e0yJtyLyNk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PABR-PedigreeChartGenerator.exe" size="421376">

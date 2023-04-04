@@ -58,7 +58,7 @@ namespace PABR_PedigreeChartGenerator
         }
 
         #region API Call
-        private bool IsLoginSuccess(string un, string pw)
+        public bool IsLoginSuccess(string un, string pw)
         {
             bool res = false;
 
@@ -107,6 +107,7 @@ namespace PABR_PedigreeChartGenerator
                     LoginDetails.userEmail = responseJson1.userEmail;
                     LoginDetails.userFName = responseJson1.userFirstName;
                     LoginDetails.userLName = responseJson1.userLastName;
+                    LoginDetails.userPW = textBox2.Text;
 
 
                 }
