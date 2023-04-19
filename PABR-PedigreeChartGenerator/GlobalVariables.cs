@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -254,6 +255,36 @@ namespace PABR_PedigreeChartGenerator
             set
             {
                 PPCField = value;
+            }
+        }
+    }
+
+    public static class DamSireDataTable
+    {
+        public static DataTable? vSireData = new DataTable();
+        public static DataTable? vDamData = new DataTable();
+
+        public static DataTable? SireData
+        {
+            get
+            {
+                return vSireData;
+            }
+            set
+            {
+                vSireData = value;
+            }
+        }
+
+        public static DataTable? DamData
+        {
+            get
+            {
+                return vDamData;
+            }
+            set
+            {
+                vDamData = value;
             }
         }
     }

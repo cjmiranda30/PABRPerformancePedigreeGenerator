@@ -14,7 +14,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Application Files\PABR-PedigreeChartGenerator_1_0_0_7\PABR-PedigreeChartGenerator.dll.manifest" size="8006">
+    <dependentAssembly dependencyType="install" codebase="PABR-PedigreeChartGenerator.dll.manifest" size="8006">
       <assemblyIdentity name="PABR-PedigreeChartGenerator.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>

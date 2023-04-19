@@ -63,6 +63,40 @@ namespace PABR_PedigreeChartGenerator
             this.Dispose();
         }
 
+        private void LoadPerformancePedigree()
+        {
+            DataTable perfPedig = new DataTable();
+
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.PostAsync("api/PedigreeChart/GetPerformancePedigree?PABRNo=" + CurSelectedDog.PABRno, null).Result;
+                var resp = response.Content.ReadAsStringAsync();
+
+                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
+
+                if (jsonList.Count > 0)
+                {
+                    //col
+                    foreach (var item in jsonList[0])
+                    {
+                        perfPedig.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                    }
+
+                    //row
+                    foreach (var item in jsonList)
+                    {
+                        DataRow row = perfPedig.NewRow();
+                        foreach (var property in item)
+                        {
+                            row[property.Name] = property.Value.ToString();
+                        }
+                        perfPedig.Rows.Add(row);
+                    }
+                }
+            }
+        }
         private void LoadParents()
         {
             #region DogDetails
@@ -843,6 +877,8 @@ namespace PABR_PedigreeChartGenerator
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //LoadPerformancePedigree();
+
             LoadParents();
             LoadGrandParents();
             LoadGrandGrandParents();
@@ -2846,53 +2882,56 @@ namespace PABR_PedigreeChartGenerator
                 UpdatePerformancePedigree(GrandParentDam2, GGrandParentSire4, GGrandParentDam4);
             }
 
-            if (GGrandParentSire1 > 0)
-            {
-                //GGrandParentSire1
-                UpdatePerformancePedigree(GGrandParentSire1, 0, 0);
-            }
+            //Great Grand Parent
+            #region Disabled
+            //if (GGrandParentSire1 > 0)
+            //{
+            //    //GGrandParentSire1
+            //    UpdatePerformancePedigree(GGrandParentSire1, 0, 0);
+            //}
 
-            if (GGrandParentDam1 > 0)
-            {
-                //GGrandParentDam1
-                UpdatePerformancePedigree(GGrandParentDam1, 0, 0);
-            }
+            //if (GGrandParentDam1 > 0)
+            //{
+            //    //GGrandParentDam1
+            //    UpdatePerformancePedigree(GGrandParentDam1, 0, 0);
+            //}
 
-            if (GGrandParentSire2 > 0)
-            {
-                //GGrandParentSire2
-                UpdatePerformancePedigree(GGrandParentSire2, 0, 0);
-            }
+            //if (GGrandParentSire2 > 0)
+            //{
+            //    //GGrandParentSire2
+            //    UpdatePerformancePedigree(GGrandParentSire2, 0, 0);
+            //}
 
-            if (GGrandParentDam2 > 0)
-            {
-                //GGrandParentDam2
-                UpdatePerformancePedigree(GGrandParentDam2, 0, 0);
-            }
+            //if (GGrandParentDam2 > 0)
+            //{
+            //    //GGrandParentDam2
+            //    UpdatePerformancePedigree(GGrandParentDam2, 0, 0);
+            //}
 
-            if (GGrandParentSire3 > 0)
-            {
-                //GGrandParentSire3
-                UpdatePerformancePedigree(GGrandParentSire3, 0, 0);
-            }
+            //if (GGrandParentSire3 > 0)
+            //{
+            //    //GGrandParentSire3
+            //    UpdatePerformancePedigree(GGrandParentSire3, 0, 0);
+            //}
 
-            if (GGrandParentDam3 > 0)
-            {
-                //GGrandParentDam3
-                UpdatePerformancePedigree(GGrandParentDam3, 0, 0);
-            }
+            //if (GGrandParentDam3 > 0)
+            //{
+            //    //GGrandParentDam3
+            //    UpdatePerformancePedigree(GGrandParentDam3, 0, 0);
+            //}
 
-            if (GGrandParentSire4 > 0)
-            {
-                //GGrandParentSire4
-                UpdatePerformancePedigree(GGrandParentSire4, 0, 0);
-            }
+            //if (GGrandParentSire4 > 0)
+            //{
+            //    //GGrandParentSire4
+            //    UpdatePerformancePedigree(GGrandParentSire4, 0, 0);
+            //}
 
-            if (GGrandParentDam4 > 0)
-            {
-                //GGrandParentDam4
-                UpdatePerformancePedigree(GGrandParentDam4, 0, 0);
-            }
+            //if (GGrandParentDam4 > 0)
+            //{
+            //    //GGrandParentDam4
+            //    UpdatePerformancePedigree(GGrandParentDam4, 0, 0);
+            //}
+            #endregion
 
             //MessageBox.Show("Unable to delete dog.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

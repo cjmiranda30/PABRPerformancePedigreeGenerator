@@ -163,7 +163,83 @@ namespace PABR_PedigreeChartGenerator
             dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dataGridView1.Sort(dataGridView1.Columns[8], ListSortDirection.Descending);
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+
+            #region Filter to Dam and Sire
+
+            #region DAM
+            DamSireDataTable.DamData = new DataTable();
+            // Copy the structure of the original DataGridView to the filteredData
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                DamSireDataTable.DamData.Columns.Add(column.Name);
+            }
+
+            // Clear the filteredData table to ensure it's empty
+            DamSireDataTable.DamData.Clear();
+
+            // Loop through each row in the dataGridView1
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Get the value of the "Gender" column in the current row
+                string gender = row.Cells["Gender"].Value.ToString();
+
+                // Check if the gender is not "Male"
+                if (!string.Equals(gender, "M", StringComparison.OrdinalIgnoreCase))
+                {
+                    // If the gender is not "Male", create a new row in the filteredData
+                    DataRow newRow = DamSireDataTable.DamData.NewRow();
+
+                    // Copy the values of all columns in the current row to the newRow
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        newRow[cell.ColumnIndex] = cell.Value;
+                    }
+
+                    // Add the newRow to the filteredData
+                    DamSireDataTable.DamData.Rows.Add(newRow);
+                }
+            }
+
+            #endregion
+
+            #region SIRE
+            DamSireDataTable.SireData = new DataTable();
+            // Copy the structure of the original DataGridView to the filteredData
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                DamSireDataTable.SireData.Columns.Add(column.Name);
+            }
+
+            // Clear the filteredData table to ensure it's empty
+            DamSireDataTable.SireData.Clear();
+
+            // Loop through each row in the dataGridView1
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Get the value of the "Gender" column in the current row
+                string gender = row.Cells["Gender"].Value.ToString();
+
+                // Check if the gender is not "Male"
+                if (!string.Equals(gender, "F", StringComparison.OrdinalIgnoreCase))
+                {
+                    // If the gender is not "Male", create a new row in the filteredData
+                    DataRow newRow = DamSireDataTable.SireData.NewRow();
+
+                    // Copy the values of all columns in the current row to the newRow
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        newRow[cell.ColumnIndex] = cell.Value;
+                    }
+
+                    // Add the newRow to the filteredData
+                    DamSireDataTable.SireData.Rows.Add(newRow);
+                }
+            }
+
+            #endregion
+
+            #endregion
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -59,7 +59,7 @@ namespace PABR_PedigreeChartGenerator
         }
 
 
-        public void LoadListBox()
+        public void LoadListBox_Disabled()
         {
             DataTable dtDog = new DataTable();
 
@@ -68,7 +68,7 @@ namespace PABR_PedigreeChartGenerator
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
-                var response = httpClient.PostAsync("api/PedigreeChart/GetAll", null).Result;
+                var response = httpClient.PostAsync("api/PedigreeChart/" + ((category.Contains("Sire")) ? "GetAllMaleDog" : "GetAllFemaleDog"), null).Result;
                 var resp = response.Content.ReadAsStringAsync();
 
                 List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
@@ -91,34 +91,36 @@ namespace PABR_PedigreeChartGenerator
 
                     if (dtDog.Rows.Count > 0)
                     {
-                        if (category.Contains("Sire"))//MALE
-                        {
-                            groupBox1.Text = "Sire List/s:";
+                        #region Disabled
+                        //if (category.Contains("Sire"))//MALE
+                        //{
+                        //    groupBox1.Text = "Sire List/s:";
 
-                            // Delete rows where Gender value is "F"
-                            for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
-                            {
-                                if (dtDog.Rows[i]["Gender"].ToString() == "F")
-                                {
-                                    dtDog.Rows.RemoveAt(i);
-                                }
-                            }
-                        }
-                        else if (category.Contains("Dam"))//FEMALE
-                        {
-                            groupBox1.Text = "Dam List/s:";
+                        //    // Delete rows where Gender value is "F"
+                        //    for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
+                        //    {
+                        //        if (dtDog.Rows[i]["Gender"].ToString() == "F")
+                        //        {
+                        //            dtDog.Rows.RemoveAt(i);
+                        //        }
+                        //    }
+                        //}
+                        //else if (category.Contains("Dam"))//FEMALE
+                        //{
+                        //    groupBox1.Text = "Dam List/s:";
 
-                            // Delete rows where Gender value is "M"
-                            for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
-                            {
-                                if (dtDog.Rows[i]["Gender"].ToString() == "M")
-                                {
-                                    dtDog.Rows.RemoveAt(i);
-                                }
-                            }
-                        }
+                        //    // Delete rows where Gender value is "M"
+                        //    for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
+                        //    {
+                        //        if (dtDog.Rows[i]["Gender"].ToString() == "M")
+                        //        {
+                        //            dtDog.Rows.RemoveAt(i);
+                        //        }
+                        //    }
+                        //}
+                        #endregion
 
-                        // Delete rows where Gender value is "F"
+                        // Delete row for main dog
                         for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
                         {
                             if (dtDog.Rows[i]["RecID"].ToString() == CurSelectedDog.UID)
@@ -126,6 +128,41 @@ namespace PABR_PedigreeChartGenerator
                                 dtDog.Rows.RemoveAt(i);
                             }
                         }
+                    }
+                }
+            }
+
+            listBox1.DataSource = dtDog;
+            listBox1.DisplayMember = "dogName";
+            listBox1.ValueMember = "recID";
+        }
+
+
+        public void LoadListBox()
+        {
+            DataTable dtDog = new DataTable();
+
+            if (category.Contains("Sire"))//MALE
+            {
+                dtDog = DamSireDataTable.SireData;
+
+                for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
+                {
+                    if (dtDog.Rows[i]["RecID"].ToString() == CurSelectedDog.UID)
+                    {
+                        dtDog.Rows.RemoveAt(i);
+                    }
+                }
+            }
+            else if (category.Contains("Dam"))//FEMALE
+            {
+                dtDog = DamSireDataTable.DamData;
+
+                for (int i = dtDog.Rows.Count - 1; i >= 0; i--)
+                {
+                    if (dtDog.Rows[i]["RecID"].ToString() == CurSelectedDog.UID)
+                    {
+                        dtDog.Rows.RemoveAt(i);
                     }
                 }
             }
