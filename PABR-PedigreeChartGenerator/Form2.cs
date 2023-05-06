@@ -95,6 +95,302 @@ namespace PABR_PedigreeChartGenerator
                         perfPedig.Rows.Add(row);
                     }
                 }
+                else
+                {
+                    //Main Dog
+                    textBox1.Text = "UNKNOWN";
+                    textBox2.Text = "UNKNOWN";
+                    textBox3.Text = "UNKNOWN";
+
+                    label7.Text = label7.Text + "   " + "UNKNOWN";
+                    label8.Text = label8.Text + "   " + "UNKNOWN";
+                    label9.Text = label9.Text + "   " + "UNKNOWN";
+                    label10.Text = label10.Text + "   " + "UNKNOWN";
+
+                    label14.Text = label14.Text + "   " + "UNKNOWN";
+                    label13.Text = label13.Text + "   " + "UNKNOWN";
+                    label12.Text = label12.Text + "   " + "UNKNOWN";
+
+                    label16.Text = label16.Text + "   " + "UNKNOWN";
+                    label15.Text = label15.Text + "   " + "UNKNOWN";
+                    label11.Text = label11.Text + "   " + "UNKNOWN";
+
+                    //
+
+                    label19.Text = label19.Text + "   " + "UNKNOWN";
+                    label18.Text = label18.Text + "   " + "UNKNOWN";
+                    label17.Text = label17.Text + "   " + "UNKNOWN";
+
+                    label22.Text = label22.Text + "   " + "UNKNOWN";
+                    label21.Text = label21.Text + "   " + "UNKNOWN";
+                    label20.Text = label20.Text + "   " + "UNKNOWN";
+
+                    label28.Text = label28.Text + "   " + "UNKNOWN";
+                    label28.Text = label28.Text + "   " + "UNKNOWN";
+                    label26.Text = label26.Text + "   " + "UNKNOWN";
+
+                    label25.Text = label25.Text + "   " + "UNKNOWN";
+                    label24.Text = label24.Text + "   " + "UNKNOWN";
+                    label23.Text = label23.Text + "   " + "UNKNOWN";
+
+                    //
+
+                    label34.Text = label34.Text + "   " + "UNKNOWN";
+                    label33.Text = label33.Text + "   " + "UNKNOWN";
+                    label32.Text = label32.Text + "   " + "UNKNOWN";
+
+                    label31.Text = label31.Text + "   " + "UNKNOWN";
+                    label30.Text = label30.Text + "   " + "UNKNOWN";
+                    label29.Text = label29.Text + "   " + "UNKNOWN";
+
+                    label40.Text = label40.Text + "   " + "UNKNOWN";
+                    label39.Text = label39.Text + "   " + "UNKNOWN";
+                    label38.Text = label38.Text + "   " + "UNKNOWN";
+
+                    label37.Text = label37.Text + "   " + "UNKNOWN";
+                    label36.Text = label36.Text + "   " + "UNKNOWN";
+                    label35.Text = label35.Text + "   " + "UNKNOWN";
+
+                    label46.Text = label46.Text + "   " + "UNKNOWN";
+                    label45.Text = label45.Text + "   " + "UNKNOWN";
+                    label44.Text = label44.Text + "   " + "UNKNOWN";
+
+                    label43.Text = label43.Text + "   " + "UNKNOWN";
+                    label42.Text = label42.Text + "   " + "UNKNOWN";
+                    label41.Text = label41.Text + "   " + "UNKNOWN";
+
+                    label52.Text = label52.Text + "   " + "UNKNOWN";
+                    label51.Text = label51.Text + "   " + "UNKNOWN";
+                    label50.Text = label50.Text + "   " + "UNKNOWN";
+
+                    label49.Text = label49.Text + "   " + "UNKNOWN";
+                    label48.Text = label48.Text + "   " + "UNKNOWN";
+                    label47.Text = label47.Text + "   " + "UNKNOWN";
+                }
+            }
+
+            //Populate fields
+
+            if (perfPedig.Rows.Count > 0)
+            {
+                #region  Main Dog
+                textBox1.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["DogName"].ToString()) ? "" : perfPedig.Rows[0]["DogName"].ToString();
+                textBox2.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["PABRNo"].ToString()) ? "" : perfPedig.Rows[0]["PABRNo"].ToString();
+                textBox3.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["OwnerName"].ToString()) ? "" : perfPedig.Rows[0]["OwnerName"].ToString();
+
+                label7.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["DogName"].ToString()) ? label7.Text : label7.Text + "   " + perfPedig.Rows[0]["DogName"].ToString();
+                label8.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Gender"].ToString()) ? label8.Text : label8.Text + "   " + perfPedig.Rows[0]["Gender"].ToString();
+                label9.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["PABRNo"].ToString()) ? label9.Text : label9.Text + "   " + perfPedig.Rows[0]["PABRNo"].ToString();
+                label10.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Color"].ToString()) ? label10.Text : label10.Text + "   " + perfPedig.Rows[0]["Color"].ToString();
+
+                ParentSire = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Sire_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["Sire_ID"].ToString());
+                ParentDam = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Dam_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["Dam_ID"].ToString());
+                #endregion
+
+                #region Sire Details
+
+                label14.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["SireName"].ToString()) ? label14.Text : label14.Text + "   " + perfPedig.Rows[0]["SireName"].ToString();
+                label13.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Sire_RegistryNo"].ToString()) ? label13.Text : label13.Text + "   " + perfPedig.Rows[0]["Sire_RegistryNo"].ToString();
+                label12.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Sire_Color"].ToString()) ? label12.Text : label12.Text + "   " + perfPedig.Rows[0]["Sire_Color"].ToString();
+
+                GrandParentSire1 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire1_RID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GrandSire1_RID"].ToString());
+                GrandParentDam1 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam1_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GrandDam1_ID"].ToString());
+                #endregion
+
+                #region Dam Details
+                label16.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["DamName"].ToString()) ? label16.Text : label16.Text + "   " + perfPedig.Rows[0]["DamName"].ToString();
+                label15.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["DamRegistryNo"].ToString()) ? label15.Text : label15.Text + "   " + perfPedig.Rows[0]["DamRegistryNo"].ToString();
+                label11.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["Dam_Color"].ToString()) ? label11.Text : label11.Text + "   " + perfPedig.Rows[0]["Dam_Color"].ToString();
+
+                GrandParentSire2 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire2_CID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GrandSire2_CID"].ToString());
+                GrandParentDam2 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam2_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GrandDam2_ID"].ToString());
+                #endregion
+
+                //Grand Parents
+                #region GrandSireDetails1
+                label19.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSireName1"].ToString()) ? label19.Text : label19.Text + "   " + perfPedig.Rows[0]["GrandSireName1"].ToString();
+                label18.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire1_RegistryNo"].ToString()) ? label18.Text : label18.Text + "   " + perfPedig.Rows[0]["GrandSire1_RegistryNo"].ToString();
+                label17.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire1_Color"].ToString()) ? label17.Text : label17.Text + "   " + perfPedig.Rows[0]["GrandSire1_Color"].ToString();
+
+                GGrandParentSire1 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire1_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandSire1_ID"].ToString());
+                GGrandParentDam1 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam1_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandDam1_ID"].ToString());
+                #endregion
+
+                #region GrandDamDetails1
+                label22.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDamName1"].ToString()) ? label22.Text : label22.Text + "   " + perfPedig.Rows[0]["GrandDamName1"].ToString();
+                label21.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam1_RegistryNo"].ToString()) ? label21.Text : label21.Text + "   " + perfPedig.Rows[0]["GrandDam1_RegistryNo"].ToString();
+                label20.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam1_Color"].ToString()) ? label20.Text : label20.Text + "   " + perfPedig.Rows[0]["GrandDam1_Color"].ToString();
+
+                GGrandParentSire2 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire2_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandSire2_ID"].ToString());
+                GGrandParentDam2 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam2_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandDam2_ID"].ToString());
+                #endregion
+
+                #region GrandSireDetails2
+                label28.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSireName2"].ToString()) ? label28.Text : label28.Text + "   " + perfPedig.Rows[0]["GrandSireName2"].ToString();
+                label27.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire2_RegistryNo"].ToString()) ? label27.Text : label27.Text + "   " + perfPedig.Rows[0]["GrandSire2_RegistryNo"].ToString();
+                label26.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandSire2_Color"].ToString()) ? label26.Text : label26.Text + "   " + perfPedig.Rows[0]["GrandSire2_Color"].ToString();
+
+                GGrandParentSire3 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire3_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandSire3_ID"].ToString());
+                GGrandParentDam3 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam3_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandDam3_ID"].ToString());
+                #endregion
+
+                #region GrandDamDetails2
+                label25.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDamName2"].ToString()) ? label25.Text : label25.Text + "   " + perfPedig.Rows[0]["GrandDamName2"].ToString();
+                label24.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam2_RegistryNo"].ToString()) ? label24.Text : label24.Text + "   " + perfPedig.Rows[0]["GrandDam2_RegistryNo"].ToString();
+                label23.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GrandDam2_Color"].ToString()) ? label23.Text : label23.Text + "   " + perfPedig.Rows[0]["GrandDam2_Color"].ToString();
+
+                GGrandParentSire4 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire4_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandSire4_ID"].ToString());
+                GGrandParentDam4 = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam4_ID"].ToString()) ? 0 : int.Parse(perfPedig.Rows[0]["GreatGrandDam4_ID"].ToString());
+                #endregion
+
+                //Great Grand Parents
+                #region GGrandSireDetails1
+                label34.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSireName1"].ToString()) ? label34.Text : label34.Text + "   " + perfPedig.Rows[0]["GreatGrandSireName1"].ToString();
+                label33.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire1_RegistryNo"].ToString()) ? label33.Text : label33.Text + "   " + perfPedig.Rows[0]["GreatGrandSire1_RegistryNo"].ToString();
+                label32.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire1_Color"].ToString()) ? label32.Text : label32.Text + "   " + perfPedig.Rows[0]["GreatGrandSire1_Color"].ToString();
+                #endregion
+
+                #region GGrandDamDetails1
+                label31.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDamName1"].ToString()) ? label31.Text : label31.Text + "   " + perfPedig.Rows[0]["GreatGrandDamName1"].ToString();
+                label30.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam1_RegistryNo"].ToString()) ? label30.Text : label30.Text + "   " + perfPedig.Rows[0]["GreatGrandDam1_RegistryNo"].ToString();
+                label29.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam1_Color"].ToString()) ? label29.Text : label29.Text + "   " + perfPedig.Rows[0]["GreatGrandDam1_Color"].ToString();
+                #endregion
+
+                #region GGrandSireDetails2
+                label40.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSireName2"].ToString()) ? label40.Text : label40.Text + "   " + perfPedig.Rows[0]["GreatGrandSireName2"].ToString();
+                label39.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire2_RegistryNo"].ToString()) ? label39.Text : label39.Text + "   " + perfPedig.Rows[0]["GreatGrandSire2_RegistryNo"].ToString();
+                label38.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire2_Color"].ToString()) ? label38.Text : label38.Text + "   " + perfPedig.Rows[0]["GreatGrandSire2_Color"].ToString();
+                #endregion
+
+                #region GGrandDamDetails2
+                label37.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDamName2"].ToString()) ? label37.Text : label37.Text + "   " + perfPedig.Rows[0]["GreatGrandDamName2"].ToString();
+                label36.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam2_RegistryNo"].ToString()) ? label36.Text : label36.Text + "   " + perfPedig.Rows[0]["GreatGrandDam2_RegistryNo"].ToString();
+                label35.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam2_Color"].ToString()) ? label35.Text : label35.Text + "   " + perfPedig.Rows[0]["GreatGrandDam2_Color"].ToString();
+                #endregion
+
+                #region GGrandSireDetails3
+                label46.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSireName3"].ToString()) ? label46.Text : label46.Text + "   " + perfPedig.Rows[0]["GreatGrandSireName3"].ToString();
+                label45.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire3_RegistryNo"].ToString()) ? label45.Text : label45.Text + "   " + perfPedig.Rows[0]["GreatGrandSire3_RegistryNo"].ToString();
+                label44.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire3_Color"].ToString()) ? label44.Text : label44.Text + "   " + perfPedig.Rows[0]["GreatGrandSire3_Color"].ToString();
+                #endregion
+
+                #region GGrandDamDetails3
+                label43.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDamName3"].ToString()) ? label43.Text : label43.Text + "   " + perfPedig.Rows[0]["GreatGrandDamName3"].ToString();
+                label42.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam3_RegistryNo"].ToString()) ? label42.Text : label42.Text + "   " + perfPedig.Rows[0]["GreatGrandDam3_RegistryNo"].ToString();
+                label41.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam3_Color"].ToString()) ? label41.Text : label41.Text + "   " + perfPedig.Rows[0]["GreatGrandDam3_Color"].ToString();
+                #endregion
+
+                #region GGrandSireDetails4
+                label52.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSireName4"].ToString()) ? label52.Text : label52.Text + "   " + perfPedig.Rows[0]["GreatGrandSireName4"].ToString();
+                label51.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire4_RegistryNo"].ToString()) ? label51.Text : label51.Text + "   " + perfPedig.Rows[0]["GreatGrandSire4_RegistryNo"].ToString();
+                label50.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandSire4_Color"].ToString()) ? label50.Text : label50.Text + "   " + perfPedig.Rows[0]["GreatGrandSire4_Color"].ToString();
+                #endregion
+
+                #region GGrandDamDetails4
+                label49.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDamName4"].ToString()) ? label49.Text : label49.Text + "   " + perfPedig.Rows[0]["GreatGrandDamName4"].ToString();
+                label48.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam4_RegistryNo"].ToString()) ? label48.Text : label48.Text + "   " + perfPedig.Rows[0]["GreatGrandDam4_RegistryNo"].ToString();
+                label47.Text = string.IsNullOrWhiteSpace(perfPedig.Rows[0]["GreatGrandDam4_Color"].ToString()) ? label47.Text : label47.Text + "   " + perfPedig.Rows[0]["GreatGrandDam4_Color"].ToString();
+                #endregion
+
+
+                //Set to UNKNOWN if ID = 0
+                #region unknown dogs
+                if (ParentSire == 0)
+                {
+                    label14.Text = label14.Text + "   " + "UNKNOWN";
+                    label13.Text = label13.Text + "   " + "UNKNOWN";
+                    label12.Text = label12.Text + "   " + "UNKNOWN";
+                }
+                if (ParentDam == 0)
+                {
+                    label16.Text = label16.Text + "   " + "UNKNOWN";
+                    label15.Text = label15.Text + "   " + "UNKNOWN";
+                    label11.Text = label11.Text + "   " + "UNKNOWN";
+                }
+
+                //
+                if (GrandParentSire1 == 0)
+                {
+                    label19.Text = label19.Text + "   " + "UNKNOWN";
+                    label18.Text = label18.Text + "   " + "UNKNOWN";
+                    label17.Text = label17.Text + "   " + "UNKNOWN";
+                }
+
+                if (GrandParentDam1 == 0)
+                {
+                    label22.Text = label22.Text + "   " + "UNKNOWN";
+                    label21.Text = label21.Text + "   " + "UNKNOWN";
+                    label20.Text = label20.Text + "   " + "UNKNOWN";
+                }
+
+                if(GrandParentSire2 == 0)
+                {
+                    label28.Text = label28.Text + "   " + "UNKNOWN";
+                    label28.Text = label28.Text + "   " + "UNKNOWN";
+                    label26.Text = label26.Text + "   " + "UNKNOWN";
+                }
+                if (GrandParentDam2 == 0)
+                {
+                    label25.Text = label25.Text + "   " + "UNKNOWN";
+                    label24.Text = label24.Text + "   " + "UNKNOWN";
+                    label23.Text = label23.Text + "   " + "UNKNOWN";
+                }
+
+                //
+
+                if (GGrandParentSire1 == 0)
+                {
+                    label34.Text = label34.Text + "   " + "UNKNOWN";
+                    label33.Text = label33.Text + "   " + "UNKNOWN";
+                    label32.Text = label32.Text + "   " + "UNKNOWN";
+                }
+                if (GGrandParentDam1 == 0)
+                {
+                    label31.Text = label31.Text + "   " + "UNKNOWN";
+                    label30.Text = label30.Text + "   " + "UNKNOWN";
+                    label29.Text = label29.Text + "   " + "UNKNOWN";
+                }
+
+                if (GGrandParentSire2 == 0)
+                {
+                    label40.Text = label40.Text + "   " + "UNKNOWN";
+                    label39.Text = label39.Text + "   " + "UNKNOWN";
+                    label38.Text = label38.Text + "   " + "UNKNOWN";
+                }
+                if (GGrandParentDam2 == 0)
+                {
+                    label37.Text = label37.Text + "   " + "UNKNOWN";
+                    label36.Text = label36.Text + "   " + "UNKNOWN";
+                    label35.Text = label35.Text + "   " + "UNKNOWN";
+                }
+
+                if (GGrandParentSire3 == 0)
+                {
+                    label46.Text = label46.Text + "   " + "UNKNOWN";
+                    label45.Text = label45.Text + "   " + "UNKNOWN";
+                    label44.Text = label44.Text + "   " + "UNKNOWN";
+                }
+                if (GGrandParentDam3 == 0)
+                {
+                    label43.Text = label43.Text + "   " + "UNKNOWN";
+                    label42.Text = label42.Text + "   " + "UNKNOWN";
+                    label41.Text = label41.Text + "   " + "UNKNOWN";
+                }
+
+                if (GGrandParentSire4 == 0)
+                {
+                    label52.Text = label52.Text + "   " + "UNKNOWN";
+                    label51.Text = label51.Text + "   " + "UNKNOWN";
+                    label50.Text = label50.Text + "   " + "UNKNOWN";
+                }
+                if (GGrandParentDam4 == 0)
+                {
+                    label49.Text = label49.Text + "   " + "UNKNOWN";
+                    label48.Text = label48.Text + "   " + "UNKNOWN";
+                    label47.Text = label47.Text + "   " + "UNKNOWN";
+                }
+
+                #endregion
             }
         }
         private void LoadParents()
@@ -727,7 +1023,7 @@ namespace PABR_PedigreeChartGenerator
             }
             #endregion
 
-            #region GrandDamDetails3
+            #region GGrandDamDetails3
             DataTable dtDogDamGGP3 = new DataTable();
 
             //get dog details
@@ -877,11 +1173,11 @@ namespace PABR_PedigreeChartGenerator
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //LoadPerformancePedigree();
+            LoadPerformancePedigree();
 
-            LoadParents();
-            LoadGrandParents();
-            LoadGrandGrandParents();
+            //LoadParents();
+            //LoadGrandParents();
+            //LoadGrandGrandParents();
         }
 
         private void button6_Click(object sender, EventArgs e)

@@ -163,7 +163,8 @@ namespace PABR_PedigreeChartGenerator
             dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            //dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+
 
             #region Filter to Dam and Sire
 
@@ -289,10 +290,15 @@ namespace PABR_PedigreeChartGenerator
             string searchText = textBox1.Text;
             if (!string.IsNullOrWhiteSpace(searchText))
             {
-                ((BindingSource)dataGridView1.DataSource).Filter = "[recID] LIKE '%" + searchText + "%' OR [dogName] LIKE '%" + searchText + "%' OR [gender] LIKE '%" + searchText + "%'" +
-                " OR [breed] LIKE '%" + searchText + "%' OR [color] LIKE '%" + searchText + "%'" +
-                " OR [doB] LIKE '%" + searchText + "%' OR [ownerName] LIKE '%" + searchText + "%'" +
-                " OR [pabrNo] LIKE '%" + searchText + "%'";
+                //((BindingSource)dataGridView1.DataSource).Filter = "[recID] LIKE '%" + searchText + "%' OR [dogName] LIKE '%" + searchText + "%' OR [gender] LIKE '%" + searchText + "%'" +
+                //" OR [breed] LIKE '%" + searchText + "%' OR [color] LIKE '%" + searchText + "%'" +
+                //" OR [doB] LIKE '%" + searchText + "%' OR [ownerName] LIKE '%" + searchText + "%'" +
+                //" OR [pabrNo] LIKE '%" + searchText + "%'";
+                
+                ((BindingSource)dataGridView1.DataSource).Filter = "[recID] LIKE '%" + searchText.Replace("'", "''") + "%' OR [dogName] LIKE '%" + searchText.Replace("'", "''") + "%' OR [gender] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [breed] LIKE '%" + searchText.Replace("'", "''") + "%' OR [color] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [doB] LIKE '%" + searchText.Replace("'", "''") + "%' OR [ownerName] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [pabrNo] LIKE '%" + searchText.Replace("'", "''") + "%'";
             }
             else
             {
@@ -371,6 +377,13 @@ namespace PABR_PedigreeChartGenerator
         private void button4_Click(object sender, EventArgs e)
         {
             SearchV2();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Form9 f9 = new Form9();
+            f9.ShowDialog();
         }
     }
 }
