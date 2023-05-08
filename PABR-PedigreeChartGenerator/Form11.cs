@@ -101,7 +101,7 @@ namespace PABR_PedigreeChartGenerator
             {
                 MessageBox.Show("Unable to add event.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            this.Hide();
+            this.Dispose();
         }
 
         private bool AddEventPoster()
@@ -137,7 +137,8 @@ namespace PABR_PedigreeChartGenerator
                         content.Add(imageContent, "file", Path.GetFileName(fn));
 
                         // Make the POST request to the web API endpoint
-                        var response = client.PostAsync("api/PedigreeChart/upload-dog-picture", content).Result;
+                        //var response = client.PostAsync("api/PedigreeChart/upload-dog-picture", content).Result;
+                        var response = client.PostAsync("api/ContentData/upload-content-image", content).Result;
 
                         var resp = response.Content.ReadAsStringAsync();
                         var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
@@ -184,11 +185,11 @@ namespace PABR_PedigreeChartGenerator
                 var status = responseJson.status;
                 var title = responseJson.title;
 
-                if (status == "error" && title == "Dog Not Registered")
+                if (status == "error" && title == "Data Not Added")
                 {
                     res = false;
                 }
-                else if (status == "success" && title == "Dog Registered")
+                else if (status == "success" && title == "Data Added")
                 {
                     res = true;
                     var msg = responseJson.message;

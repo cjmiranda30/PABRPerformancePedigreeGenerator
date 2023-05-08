@@ -168,7 +168,7 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(794, 554);
+            this.button1.Location = new System.Drawing.Point(794, 736);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 29);
             this.button1.TabIndex = 3;
@@ -187,7 +187,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(16, 161);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(853, 387);
+            this.groupBox2.Size = new System.Drawing.Size(853, 569);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -226,7 +226,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PABR_PedigreeChartGenerator.Properties.Resources.content_management_svgrepo_com;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 437);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 386);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(164, 158);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,10 +247,9 @@
             // 
             // button2
             // 
-            this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(194, 437);
+            this.button2.Location = new System.Drawing.Point(194, 386);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(627, 158);
             this.button2.TabIndex = 4;
@@ -263,7 +262,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(875, 589);
+            this.ClientSize = new System.Drawing.Size(875, 770);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
