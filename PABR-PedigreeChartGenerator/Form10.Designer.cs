@@ -28,459 +28,459 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.metroSetDivider3 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroSetDivider2 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.metroSetDivider1 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label6 = new Label();
+            metroSetDivider3 = new MetroSet_UI.Controls.MetroSetDivider();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            metroSetDivider2 = new MetroSet_UI.Controls.MetroSetDivider();
+            metroSetDivider1 = new MetroSet_UI.Controls.MetroSetDivider();
+            pictureBox1 = new PictureBox();
+            groupBox2 = new GroupBox();
+            button7 = new Button();
+            button5 = new Button();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            button3 = new Button();
+            groupBox3 = new GroupBox();
+            button6 = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
+            dataGridView1 = new DataGridView();
+            label4 = new Label();
+            tabPage3 = new TabPage();
+            button10 = new Button();
+            button9 = new Button();
+            button8 = new Button();
+            groupBox4 = new GroupBox();
+            pictureBox2 = new PictureBox();
+            tabPage4 = new TabPage();
+            tabPage5 = new TabPage();
+            timer1 = new System.Windows.Forms.Timer(components);
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabPage3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.metroSetDivider3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.metroSetDivider2);
-            this.groupBox1.Controls.Add(this.metroSetDivider1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1104, 157);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(metroSetDivider3);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(metroSetDivider2);
+            groupBox1.Controls.Add(metroSetDivider1);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Location = new Point(12, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1104, 157);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(373, 126);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 25);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "CONTENT MANAGEMENT";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(373, 126);
+            label6.Name = "label6";
+            label6.Size = new Size(248, 25);
+            label6.TabIndex = 7;
+            label6.Text = "CONTENT MANAGEMENT";
             // 
             // metroSetDivider3
             // 
-            this.metroSetDivider3.IsDerivedStyle = true;
-            this.metroSetDivider3.Location = new System.Drawing.Point(228, 119);
-            this.metroSetDivider3.Name = "metroSetDivider3";
-            this.metroSetDivider3.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider3.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider3.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider3.StyleManager = null;
-            this.metroSetDivider3.TabIndex = 6;
-            this.metroSetDivider3.Text = "metroSetDivider3";
-            this.metroSetDivider3.ThemeAuthor = "Narwin";
-            this.metroSetDivider3.ThemeName = "MetroLite";
-            this.metroSetDivider3.Thickness = 1;
+            metroSetDivider3.IsDerivedStyle = true;
+            metroSetDivider3.Location = new Point(228, 119);
+            metroSetDivider3.Name = "metroSetDivider3";
+            metroSetDivider3.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider3.Size = new Size(579, 4);
+            metroSetDivider3.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider3.StyleManager = null;
+            metroSetDivider3.TabIndex = 6;
+            metroSetDivider3.Text = "metroSetDivider3";
+            metroSetDivider3.ThemeAuthor = "Narwin";
+            metroSetDivider3.ThemeName = "MetroLite";
+            metroSetDivider3.Thickness = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(269, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Date and Time: ";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(269, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Date and Time: ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(269, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "User logged in:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(269, 74);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 20);
+            label2.TabIndex = 4;
+            label2.Text = "User logged in:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(255, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(526, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "PHILIPPINE AMERICAN BULLY REGISTRY";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Historic", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(255, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(526, 37);
+            label1.TabIndex = 3;
+            label1.Text = "PHILIPPINE AMERICAN BULLY REGISTRY";
             // 
             // metroSetDivider2
             // 
-            this.metroSetDivider2.IsDerivedStyle = true;
-            this.metroSetDivider2.Location = new System.Drawing.Point(228, 69);
-            this.metroSetDivider2.Name = "metroSetDivider2";
-            this.metroSetDivider2.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider2.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider2.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider2.StyleManager = null;
-            this.metroSetDivider2.TabIndex = 2;
-            this.metroSetDivider2.Text = "metroSetDivider2";
-            this.metroSetDivider2.ThemeAuthor = "Narwin";
-            this.metroSetDivider2.ThemeName = "MetroLite";
-            this.metroSetDivider2.Thickness = 1;
+            metroSetDivider2.IsDerivedStyle = true;
+            metroSetDivider2.Location = new Point(228, 69);
+            metroSetDivider2.Name = "metroSetDivider2";
+            metroSetDivider2.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider2.Size = new Size(579, 4);
+            metroSetDivider2.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider2.StyleManager = null;
+            metroSetDivider2.TabIndex = 2;
+            metroSetDivider2.Text = "metroSetDivider2";
+            metroSetDivider2.ThemeAuthor = "Narwin";
+            metroSetDivider2.ThemeName = "MetroLite";
+            metroSetDivider2.Thickness = 1;
             // 
             // metroSetDivider1
             // 
-            this.metroSetDivider1.IsDerivedStyle = true;
-            this.metroSetDivider1.Location = new System.Drawing.Point(228, 16);
-            this.metroSetDivider1.Name = "metroSetDivider1";
-            this.metroSetDivider1.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider1.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider1.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider1.StyleManager = null;
-            this.metroSetDivider1.TabIndex = 1;
-            this.metroSetDivider1.Text = "metroSetDivider1";
-            this.metroSetDivider1.ThemeAuthor = "Narwin";
-            this.metroSetDivider1.ThemeName = "MetroLite";
-            this.metroSetDivider1.Thickness = 1;
+            metroSetDivider1.IsDerivedStyle = true;
+            metroSetDivider1.Location = new Point(228, 16);
+            metroSetDivider1.Name = "metroSetDivider1";
+            metroSetDivider1.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider1.Size = new Size(579, 4);
+            metroSetDivider1.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider1.StyleManager = null;
+            metroSetDivider1.TabIndex = 1;
+            metroSetDivider1.Text = "metroSetDivider1";
+            metroSetDivider1.ThemeAuthor = "Narwin";
+            metroSetDivider1.ThemeName = "MetroLite";
+            metroSetDivider1.Thickness = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(4, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(155, 140);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 161);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(159, 616);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(button7);
+            groupBox2.Controls.Add(button5);
+            groupBox2.Controls.Add(button4);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(button3);
+            groupBox2.Location = new Point(12, 161);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(159, 616);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
             // 
             // button7
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(12, 438);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(141, 98);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "Champions";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.Enabled = false;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(12, 438);
+            button7.Name = "button7";
+            button7.Size = new Size(141, 98);
+            button7.TabIndex = 14;
+            button7.Text = "Champions";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button5
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(6, 585);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 25);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(6, 585);
+            button5.Name = "button5";
+            button5.Size = new Size(141, 25);
+            button5.TabIndex = 13;
+            button5.Text = "Back";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(12, 334);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 98);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Staffs";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(12, 334);
+            button4.Name = "button4";
+            button4.Size = new Size(141, 98);
+            button4.TabIndex = 12;
+            button4.Text = "Staffs";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(12, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 98);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Event Photos";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(12, 230);
+            button2.Name = "button2";
+            button2.Size = new Size(141, 98);
+            button2.TabIndex = 11;
+            button2.Text = "Event Photos";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 98);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Testimonials";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(12, 126);
+            button1.Name = "button1";
+            button1.Size = new Size(141, 98);
+            button1.TabIndex = 10;
+            button1.Text = "Testimonials";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(12, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 98);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Event Posters";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = Color.White;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(12, 22);
+            button3.Name = "button3";
+            button3.Size = new Size(141, 98);
+            button3.TabIndex = 9;
+            button3.Text = "Event Posters";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.tabControl1);
-            this.groupBox3.Location = new System.Drawing.Point(177, 161);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(939, 616);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
+            groupBox3.Controls.Add(button6);
+            groupBox3.Controls.Add(tabControl1);
+            groupBox3.Location = new Point(177, 161);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(939, 616);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
             // 
             // button6
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(830, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 27);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Add Record";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(830, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(99, 27);
+            button6.TabIndex = 11;
+            button6.Text = "Add Record";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.ItemSize = new System.Drawing.Size(0, 20);
-            this.tabControl1.Location = new System.Drawing.Point(6, 6);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(927, 604);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.ItemSize = new Size(0, 20);
+            tabControl1.Location = new Point(6, 6);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(927, 604);
+            tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(919, 576);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.AutoScroll = true;
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(919, 576);
+            tabPage1.TabIndex = 0;
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(919, 576);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.AutoScroll = true;
+            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(919, 576);
+            tabPage2.TabIndex = 1;
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 54);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(910, 516);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 54);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(910, 516);
+            dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 25);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Customer Reviews:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(6, 13);
+            label4.Name = "label4";
+            label4.Size = new Size(186, 25);
+            label4.TabIndex = 8;
+            label4.Text = "Customer Reviews:";
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button10);
-            this.tabPage3.Controls.Add(this.button9);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(919, 576);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Controls.Add(button10);
+            tabPage3.Controls.Add(button9);
+            tabPage3.Controls.Add(button8);
+            tabPage3.Controls.Add(groupBox4);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(919, 576);
+            tabPage3.TabIndex = 2;
+            tabPage3.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(814, 521);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(99, 27);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Next >";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            button10.FlatStyle = FlatStyle.Flat;
+            button10.Location = new Point(814, 521);
+            button10.Name = "button10";
+            button10.Size = new Size(99, 27);
+            button10.TabIndex = 14;
+            button10.Text = "Next >";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(9, 524);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(99, 27);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "< Previous";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Location = new Point(9, 524);
+            button9.Name = "button9";
+            button9.Size = new Size(99, 27);
+            button9.TabIndex = 13;
+            button9.Text = "< Previous";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(415, 521);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(99, 27);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Pause";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Location = new Point(415, 521);
+            button8.Name = "button8";
+            button8.Size = new Size(99, 27);
+            button8.TabIndex = 12;
+            button8.Text = "Pause";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pictureBox2);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI Historic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.Location = new System.Drawing.Point(9, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(904, 512);
-            this.groupBox4.TabIndex = 10;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Gallery";
+            groupBox4.Controls.Add(pictureBox2);
+            groupBox4.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.Location = new Point(9, 6);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(904, 512);
+            groupBox4.TabIndex = 10;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Gallery";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(898, 481);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Location = new Point(3, 28);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(898, 481);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // tabPage4
             // 
-            this.tabPage4.AutoScroll = true;
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(919, 576);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.UseVisualStyleBackColor = true;
+            tabPage4.AutoScroll = true;
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(919, 576);
+            tabPage4.TabIndex = 3;
+            tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            this.tabPage5.AutoScroll = true;
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(919, 576);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.UseVisualStyleBackColor = true;
+            tabPage5.AutoScroll = true;
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(919, 576);
+            tabPage5.TabIndex = 4;
+            tabPage5.UseVisualStyleBackColor = true;
             // 
             // timer1
             // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Interval = 5000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form10
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1128, 789);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form10";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PABR - Content Management";
-            this.Load += new System.EventHandler(this.Form10_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1128, 789);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Form10";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "PABR - Content Management";
+            Load += Form10_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPage3.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

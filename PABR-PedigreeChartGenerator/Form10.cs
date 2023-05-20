@@ -43,7 +43,7 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=EventPoster").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -169,7 +169,7 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=PABRChampions").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -281,7 +281,7 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=Testimonial").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -357,7 +357,7 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=PABRStaff").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -467,7 +467,7 @@ namespace PABR_PedigreeChartGenerator
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=EventPhotos").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
