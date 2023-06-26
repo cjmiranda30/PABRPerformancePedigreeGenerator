@@ -29,260 +29,259 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.metroSetDivider3 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroSetDivider2 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.metroSetDivider1 = new MetroSet_UI.Controls.MetroSetDivider();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label6 = new Label();
+            metroSetDivider3 = new MetroSet_UI.Controls.MetroSetDivider();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            metroSetDivider2 = new MetroSet_UI.Controls.MetroSetDivider();
+            metroSetDivider1 = new MetroSet_UI.Controls.MetroSetDivider();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            groupBox2 = new GroupBox();
+            pictureBox4 = new PictureBox();
+            button4 = new Button();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            button3 = new Button();
+            button2 = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.metroSetDivider3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.metroSetDivider2);
-            this.groupBox1.Controls.Add(this.metroSetDivider1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(857, 157);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(metroSetDivider3);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(metroSetDivider2);
+            groupBox1.Controls.Add(metroSetDivider1);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Location = new Point(12, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(857, 157);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(444, 126);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 25);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "MAIN MENU";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(444, 126);
+            label6.Name = "label6";
+            label6.Size = new Size(128, 25);
+            label6.TabIndex = 7;
+            label6.Text = "MAIN MENU";
             // 
             // metroSetDivider3
             // 
-            this.metroSetDivider3.IsDerivedStyle = true;
-            this.metroSetDivider3.Location = new System.Drawing.Point(228, 119);
-            this.metroSetDivider3.Name = "metroSetDivider3";
-            this.metroSetDivider3.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider3.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider3.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider3.StyleManager = null;
-            this.metroSetDivider3.TabIndex = 6;
-            this.metroSetDivider3.Text = "metroSetDivider3";
-            this.metroSetDivider3.ThemeAuthor = "Narwin";
-            this.metroSetDivider3.ThemeName = "MetroLite";
-            this.metroSetDivider3.Thickness = 1;
+            metroSetDivider3.IsDerivedStyle = true;
+            metroSetDivider3.Location = new Point(228, 119);
+            metroSetDivider3.Name = "metroSetDivider3";
+            metroSetDivider3.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider3.Size = new Size(579, 4);
+            metroSetDivider3.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider3.StyleManager = null;
+            metroSetDivider3.TabIndex = 6;
+            metroSetDivider3.Text = "metroSetDivider3";
+            metroSetDivider3.ThemeAuthor = "Narwin";
+            metroSetDivider3.ThemeName = "MetroLite";
+            metroSetDivider3.Thickness = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(269, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Date and Time: ";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(269, 96);
+            label3.Name = "label3";
+            label3.Size = new Size(114, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Date and Time: ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(269, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "User logged in:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(269, 74);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 20);
+            label2.TabIndex = 4;
+            label2.Text = "User logged in:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(255, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(526, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "PHILIPPINE AMERICAN BULLY REGISTRY";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Historic", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(255, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(526, 37);
+            label1.TabIndex = 3;
+            label1.Text = "PHILIPPINE AMERICAN BULLY REGISTRY";
             // 
             // metroSetDivider2
             // 
-            this.metroSetDivider2.IsDerivedStyle = true;
-            this.metroSetDivider2.Location = new System.Drawing.Point(228, 69);
-            this.metroSetDivider2.Name = "metroSetDivider2";
-            this.metroSetDivider2.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider2.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider2.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider2.StyleManager = null;
-            this.metroSetDivider2.TabIndex = 2;
-            this.metroSetDivider2.Text = "metroSetDivider2";
-            this.metroSetDivider2.ThemeAuthor = "Narwin";
-            this.metroSetDivider2.ThemeName = "MetroLite";
-            this.metroSetDivider2.Thickness = 1;
+            metroSetDivider2.IsDerivedStyle = true;
+            metroSetDivider2.Location = new Point(228, 69);
+            metroSetDivider2.Name = "metroSetDivider2";
+            metroSetDivider2.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider2.Size = new Size(579, 4);
+            metroSetDivider2.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider2.StyleManager = null;
+            metroSetDivider2.TabIndex = 2;
+            metroSetDivider2.Text = "metroSetDivider2";
+            metroSetDivider2.ThemeAuthor = "Narwin";
+            metroSetDivider2.ThemeName = "MetroLite";
+            metroSetDivider2.Thickness = 1;
             // 
             // metroSetDivider1
             // 
-            this.metroSetDivider1.IsDerivedStyle = true;
-            this.metroSetDivider1.Location = new System.Drawing.Point(228, 16);
-            this.metroSetDivider1.Name = "metroSetDivider1";
-            this.metroSetDivider1.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
-            this.metroSetDivider1.Size = new System.Drawing.Size(579, 4);
-            this.metroSetDivider1.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetDivider1.StyleManager = null;
-            this.metroSetDivider1.TabIndex = 1;
-            this.metroSetDivider1.Text = "metroSetDivider1";
-            this.metroSetDivider1.ThemeAuthor = "Narwin";
-            this.metroSetDivider1.ThemeName = "MetroLite";
-            this.metroSetDivider1.Thickness = 1;
+            metroSetDivider1.IsDerivedStyle = true;
+            metroSetDivider1.Location = new Point(228, 16);
+            metroSetDivider1.Name = "metroSetDivider1";
+            metroSetDivider1.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
+            metroSetDivider1.Size = new Size(579, 4);
+            metroSetDivider1.Style = MetroSet_UI.Enums.Style.Light;
+            metroSetDivider1.StyleManager = null;
+            metroSetDivider1.TabIndex = 1;
+            metroSetDivider1.Text = "metroSetDivider1";
+            metroSetDivider1.ThemeAuthor = "Narwin";
+            metroSetDivider1.ThemeName = "MetroLite";
+            metroSetDivider1.Thickness = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(4, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(155, 140);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(794, 736);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(794, 594);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 29);
+            button1.TabIndex = 3;
+            button1.Text = "Logout";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(16, 161);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(853, 569);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(pictureBox4);
+            groupBox2.Controls.Add(button4);
+            groupBox2.Controls.Add(pictureBox3);
+            groupBox2.Controls.Add(pictureBox2);
+            groupBox2.Controls.Add(button3);
+            groupBox2.Controls.Add(button2);
+            groupBox2.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Location = new Point(16, 161);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(853, 427);
+            groupBox2.TabIndex = 4;
+            groupBox2.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::PABR_PedigreeChartGenerator.Properties.Resources.agent_detective_svgrepo_com;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 205);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(164, 158);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
+            pictureBox4.Image = Properties.Resources.agent_detective_svgrepo_com;
+            pictureBox4.Location = new Point(47, 152);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(141, 115);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 10;
+            pictureBox4.TabStop = false;
             // 
             // button4
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(194, 205);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(627, 158);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Agent Records";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(194, 152);
+            button4.Name = "button4";
+            button4.Size = new Size(627, 115);
+            button4.TabIndex = 9;
+            button4.Text = "Agent Records";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PABR_PedigreeChartGenerator.Properties.Resources.bulldog_svgrepo_com;
-            this.pictureBox3.Location = new System.Drawing.Point(24, 22);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(164, 158);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Resources.bulldog_svgrepo_com;
+            pictureBox3.Location = new Point(47, 22);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(141, 115);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PABR_PedigreeChartGenerator.Properties.Resources.content_management_svgrepo_com;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 386);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(164, 158);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources.content_management_svgrepo_com;
+            pictureBox2.Location = new Point(47, 284);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(141, 115);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(194, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(627, 158);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Dog/Pedigree Record Management";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(194, 22);
+            button3.Name = "button3";
+            button3.Size = new Size(627, 115);
+            button3.TabIndex = 5;
+            button3.Text = "Dog/Pedigree Record Management";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(194, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(627, 158);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Content Management";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(194, 284);
+            button2.Name = "button2";
+            button2.Size = new Size(627, 115);
+            button2.TabIndex = 4;
+            button2.Text = "Content Management";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form9
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(875, 770);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form9";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form9";
-            this.Load += new System.EventHandler(this.Form9_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(875, 627);
+            Controls.Add(groupBox2);
+            Controls.Add(button1);
+            Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Form9";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form9";
+            Load += Form9_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

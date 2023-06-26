@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -287,5 +289,171 @@ namespace PABR_PedigreeChartGenerator
                 vDamData = value;
             }
         }
+    }
+
+    public static class CurSelectedContentImage
+    {
+        public static string? PContentImage = "";
+
+        public static string? ContentImage
+        {
+            get
+            {
+                return PContentImage;
+            }
+            set
+            {
+                PContentImage = value;
+            }
+        }
+    }
+
+    public static class DogDetails
+    {
+        public static string? PUID = "";
+        public static string? PDogName = "";
+        public static string? PGender = "";
+        public static string? PBreed = "";
+        public static string? PColor = "";
+        public static string? PDoB = "";
+        public static string? POwnerName = "";
+        public static string? PPABRno = "";
+        //public static string? PRegistryNo = "";
+        public static string? PDateAdded = "";
+        public static string? PPicURL = "";
+
+        public static string? UID
+        {
+            get
+            {
+                return PUID;
+            }
+            set
+            {
+                PUID = value;
+            }
+        }
+        public static string? DogName
+        {
+            get
+            {
+                return PDogName;
+            }
+            set
+            {
+                PDogName = value;
+            }
+        }
+        public static string? Gender
+        {
+            get
+            {
+                return PGender;
+            }
+            set
+            {
+                PGender = value;
+            }
+        }
+        public static string? Breed
+        {
+            get
+            {
+                return PBreed;
+            }
+            set
+            {
+                PBreed = value;
+            }
+        }
+        public static string? Color
+        {
+            get
+            {
+                return PColor;
+            }
+            set
+            {
+                PColor = value;
+            }
+        }
+
+        public static string? DoB
+        {
+            get
+            {
+                return PDoB;
+            }
+            set
+            {
+                PDoB = value;
+            }
+        }
+        public static string? OwnerName
+        {
+            get
+            {
+                return POwnerName;
+            }
+            set
+            {
+                POwnerName = value;
+            }
+        }
+        public static string? PABRno
+        {
+            get
+            {
+                return PPABRno;
+            }
+            set
+            {
+                PPABRno = value;
+            }
+        }
+        //public static string? RegistryNo
+        //{
+        //    get
+        //    {
+        //        return PRegistryNo;
+        //    }
+        //    set
+        //    {
+        //        PRegistryNo = value;
+        //    }
+        //}
+        public static string? DateAdded
+        {
+            get
+            {
+                return PDateAdded;
+            }
+            set
+            {
+                PDateAdded = value;
+            }
+        }
+        public static string? PicURL
+        {
+            get
+            {
+                return PPicURL;
+            }
+            set
+            {
+                PPicURL = value;
+            }
+        }
+
+        public static void ClearProperties()
+        {
+            // Loop through the static properties of the model
+            foreach (var field in typeof(CurSelectedDog).GetFields(BindingFlags.Public | BindingFlags.Static))
+            {
+                // Set the value of the static property to its default value
+                field.SetValue(null, default);
+            }
+        }
+
     }
 }

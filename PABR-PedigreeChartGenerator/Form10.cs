@@ -14,16 +14,13 @@ namespace PABR_PedigreeChartGenerator
 {
     public partial class Form10 : Form
     {
-        private int currentIndex = 0;
-        private bool isPaused = false;
-        private string[] webPaths;
         public Form10()
         {
             InitializeComponent();
 
             tabControl1.SelectedIndex = 0;
             button3.BackColor = Color.Silver;
-            LoadEventPoster();
+            //LoadEventPosterv2();
 
         }
 
@@ -499,13 +496,326 @@ namespace PABR_PedigreeChartGenerator
 
                 if (eventPhotos.Rows.Count > 0)
                 {
-                    webPaths = eventPhotos.AsEnumerable()
-                        .Select(row => "https://pabrdex.com/contentimages/" + row.Field<string>("image"))
-                        .ToArray();
+                    //webPaths = eventPhotos.AsEnumerable()
+                    //    .Select(row => "https://pabrdex.com/contentimages/" + row.Field<string>("image"))
+                    //    .ToArray();
                 }
             }
 
-            timer1.Start();
+            //timer1.Start();
+        }
+
+        void LoadEventPosterv2()
+        {
+            DataTable eventPoster = new DataTable();
+            BindingSource SBeventPoster = new BindingSource();
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=EventPoster").Result;
+                var resp = response.Content.ReadAsStringAsync();
+
+                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
+
+                if (jsonList.Count > 0)
+                {
+                    //col
+                    foreach (var item in jsonList[0])
+                    {
+                        eventPoster.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                    }
+
+                    //row
+                    foreach (var item in jsonList)
+                    {
+                        DataRow row = eventPoster.NewRow();
+                        foreach (var property in item)
+                        {
+                            row[property.Name] = property.Value.ToString();
+                        }
+                        eventPoster.Rows.Add(row);
+                    }
+
+                    SBeventPoster.DataSource = eventPoster;
+
+                    dataGridView2.Columns.Clear();
+                    dataGridView2.DataSource = SBeventPoster;
+
+
+                    dataGridView2.Columns[0].HeaderText = "ID";
+                    dataGridView2.Columns[1].HeaderText = "Title";
+                    dataGridView2.Columns[2].HeaderText = "Schedule";
+                    dataGridView2.Columns[3].HeaderText = "Location";
+                    dataGridView2.Columns[4].HeaderText = "Description";
+                    dataGridView2.Columns[5].HeaderText = "Image";
+                    dataGridView2.Columns[6].HeaderText = "Date Added";
+
+                    dataGridView2.Columns[5].Visible = false; //PictureURL
+                    dataGridView2.Columns[6].Visible = false; //PictureURL
+
+                    DataGridViewButtonColumn viewImageButton = new DataGridViewButtonColumn();
+                    viewImageButton.HeaderText = "Image";
+                    viewImageButton.Text = "View Image";
+                    viewImageButton.UseColumnTextForButtonValue = true;
+                    dataGridView2.Columns.Add(viewImageButton);
+
+                    DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                    deleteButton.HeaderText = "";
+                    deleteButton.Text = "Delete";
+                    deleteButton.UseColumnTextForButtonValue = true;
+                    dataGridView2.Columns.Add(deleteButton);
+
+                    dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                }
+                else
+                {
+                    dataGridView2.Columns.Clear();
+                    return;
+                }
+            }
+        }
+        void LoadEventPhotosv2()
+        {
+            DataTable gallery = new DataTable();
+            BindingSource sbGallery = new BindingSource();
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=EventPhotos").Result;
+                var resp = response.Content.ReadAsStringAsync();
+
+                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
+
+                if (jsonList.Count > 0)
+                {
+                    //col
+                    foreach (var item in jsonList[0])
+                    {
+                        gallery.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                    }
+
+                    //row
+                    foreach (var item in jsonList)
+                    {
+                        DataRow row = gallery.NewRow();
+                        foreach (var property in item)
+                        {
+                            row[property.Name] = property.Value.ToString();
+                        }
+                        gallery.Rows.Add(row);
+                    }
+
+                    sbGallery.DataSource = gallery;
+
+                    dataGridView5.Columns.Clear();
+
+                    // Add checkbox column to DataGridView
+                    DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                    chk.HeaderText = "Select";
+                    chk.Name = "chk";
+                    chk.TrueValue = true;
+                    chk.FalseValue = false;
+                    dataGridView5.Columns.Insert(0, chk);
+
+                    dataGridView5.DataSource = sbGallery;
+
+                    dataGridView5.Columns[1].HeaderText = "ID";
+                    dataGridView5.Columns[2].HeaderText = "File Name";
+                    dataGridView5.Columns[3].HeaderText = "Date Added";
+
+                    DataGridViewButtonColumn viewImageButton = new DataGridViewButtonColumn();
+                    viewImageButton.HeaderText = "Image";
+                    viewImageButton.Text = "View Image";
+                    viewImageButton.UseColumnTextForButtonValue = true;
+                    dataGridView5.Columns.Add(viewImageButton);
+
+                    DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                    deleteButton.HeaderText = "Action";
+                    deleteButton.Name = "Delete";
+                    deleteButton.Text = "Delete";
+                    deleteButton.UseColumnTextForButtonValue = true;
+                    dataGridView5.Columns.Add(deleteButton);
+
+                    dataGridView5.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView5.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView5.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView5.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView5.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView5.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                }
+                else
+                {
+                    dataGridView5.Columns.Clear();
+                    return;
+                }
+            }
+        }
+        void LoadStaffv2()
+        {
+            DataTable pabrStaff = new DataTable();
+            BindingSource SBpabrStaff = new BindingSource();
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=PABRStaff").Result;
+                var resp = response.Content.ReadAsStringAsync();
+
+                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
+
+                if (jsonList.Count > 0)
+                {
+                    //col
+                    foreach (var item in jsonList[0])
+                    {
+                        pabrStaff.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                    }
+
+                    //row
+                    foreach (var item in jsonList)
+                    {
+                        DataRow row = pabrStaff.NewRow();
+                        foreach (var property in item)
+                        {
+                            row[property.Name] = property.Value.ToString();
+                        }
+                        pabrStaff.Rows.Add(row);
+                    }
+
+                    SBpabrStaff.DataSource = pabrStaff;
+
+                    dataGridView3.Columns.Clear();
+                    dataGridView3.DataSource = SBpabrStaff;
+
+
+                    dataGridView3.Columns[0].HeaderText = "ID";
+                    dataGridView3.Columns[1].HeaderText = "Name";
+                    dataGridView3.Columns[2].HeaderText = "Position";
+                    dataGridView3.Columns[3].HeaderText = "Twitter";
+                    dataGridView3.Columns[4].HeaderText = "Facebook";
+                    dataGridView3.Columns[5].HeaderText = "Instagram";
+                    dataGridView3.Columns[6].HeaderText = "Image";
+                    dataGridView3.Columns[7].HeaderText = "Date Added";
+
+                    dataGridView3.Columns[3].Visible = false; //
+                    dataGridView3.Columns[4].Visible = false; //
+                    dataGridView3.Columns[5].Visible = false; //
+                    dataGridView3.Columns[6].Visible = false; //
+                    dataGridView3.Columns[7].Visible = false; //
+
+                    DataGridViewButtonColumn viewImageButton = new DataGridViewButtonColumn();
+                    viewImageButton.HeaderText = "Image";
+                    viewImageButton.Text = "View Image";
+                    viewImageButton.UseColumnTextForButtonValue = true;
+                    dataGridView3.Columns.Add(viewImageButton);
+
+                    DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                    deleteButton.HeaderText = "";
+                    deleteButton.Text = "Delete";
+                    deleteButton.UseColumnTextForButtonValue = true;
+                    dataGridView3.Columns.Add(deleteButton);
+
+                    dataGridView3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView3.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                }
+                else
+                {
+                    dataGridView3.Columns.Clear();
+                    return;
+                }
+            }
+        }
+        void LoadChampionsv2()
+        {
+            DataTable pabrChampion = new DataTable();
+            BindingSource SBpabrChampionf = new BindingSource();
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=PABRChampions").Result;
+                var resp = response.Content.ReadAsStringAsync();
+
+                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
+
+                if (jsonList.Count > 0)
+                {
+                    //col
+                    foreach (var item in jsonList[0])
+                    {
+                        pabrChampion.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                    }
+
+                    //row
+                    foreach (var item in jsonList)
+                    {
+                        DataRow row = pabrChampion.NewRow();
+                        foreach (var property in item)
+                        {
+                            row[property.Name] = property.Value.ToString();
+                        }
+                        pabrChampion.Rows.Add(row);
+                    }
+
+                    SBpabrChampionf.DataSource = pabrChampion;
+
+                    dataGridView4.Columns.Clear();
+                    dataGridView4.DataSource = SBpabrChampionf;
+
+
+                    dataGridView4.Columns[0].HeaderText = "ID";
+                    dataGridView4.Columns[1].HeaderText = "Name";
+                    dataGridView4.Columns[2].HeaderText = "Owner Name";
+                    dataGridView4.Columns[3].HeaderText = "Image";
+                    dataGridView4.Columns[4].HeaderText = "Certificate";
+                    dataGridView4.Columns[5].HeaderText = "Date Added";
+
+                    dataGridView4.Columns[3].Visible = false; //
+                    dataGridView4.Columns[4].Visible = false; //
+                    dataGridView4.Columns[5].Visible = false; //
+
+                    DataGridViewButtonColumn viewImageButton = new DataGridViewButtonColumn();
+                    viewImageButton.HeaderText = "Image";
+                    viewImageButton.Text = "View Image";
+                    viewImageButton.UseColumnTextForButtonValue = true;
+                    dataGridView4.Columns.Add(viewImageButton);
+
+                    DataGridViewButtonColumn viewCertificateButton = new DataGridViewButtonColumn();
+                    viewCertificateButton.HeaderText = "Certificate";
+                    viewCertificateButton.Text = "View Certificate";
+                    viewCertificateButton.UseColumnTextForButtonValue = true;
+                    dataGridView4.Columns.Add(viewCertificateButton);
+
+                    DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                    deleteButton.HeaderText = "";
+                    deleteButton.Text = "Delete";
+                    deleteButton.UseColumnTextForButtonValue = true;
+                    dataGridView4.Columns.Add(deleteButton);
+
+                    dataGridView4.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                else
+                {
+                    dataGridView4.Columns.Clear();
+                    return;
+                }
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -513,7 +823,7 @@ namespace PABR_PedigreeChartGenerator
 
             button6.Text = "Add Record";
 
-            LoadEventPoster();
+            //LoadEventPoster();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -522,16 +832,16 @@ namespace PABR_PedigreeChartGenerator
 
             button6.Text = "Add Record";
 
-            LoadTestimonials();
+            //LoadTestimonials();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 2;
 
-            button6.Text = "View Details";
+            button6.Text = "Add Record";
 
-            LoadEventPhotos();
+            //LoadEventPhotos();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -540,7 +850,7 @@ namespace PABR_PedigreeChartGenerator
 
             button6.Text = "Add Record";
 
-            LoadStaff();
+            //LoadStaff();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -562,7 +872,8 @@ namespace PABR_PedigreeChartGenerator
 
                 button6.Text = "Add Record";
 
-                LoadEventPoster();
+                //LoadEventPoster();
+                LoadEventPosterv2();
             }
             else if (tabControl1.SelectedIndex == 1)
             {
@@ -586,7 +897,8 @@ namespace PABR_PedigreeChartGenerator
 
                 button6.Text = "View Details";
 
-                LoadEventPhotos();
+                //LoadEventPhotos();
+                LoadEventPhotosv2();
             }
             else if (tabControl1.SelectedIndex == 3)
             {
@@ -598,7 +910,8 @@ namespace PABR_PedigreeChartGenerator
 
                 button6.Text = "Add Record";
 
-                LoadStaff();
+                //LoadStaff();
+                LoadStaffv2();
 
             }
             else
@@ -611,7 +924,8 @@ namespace PABR_PedigreeChartGenerator
 
                 button6.Text = "Add Record";
 
-                LoadChampions();
+                //LoadChampions();
+                LoadChampionsv2();
             }
         }
 
@@ -621,7 +935,8 @@ namespace PABR_PedigreeChartGenerator
             {
                 Form11 f11 = new Form11();
                 f11.ShowDialog();
-                LoadEventPoster();
+                //LoadEventPoster();
+                LoadEventPosterv2();
             }
             else if (tabControl1.SelectedIndex == 1)
             {
@@ -633,19 +948,22 @@ namespace PABR_PedigreeChartGenerator
             {
                 Form17 f17 = new Form17();
                 f17.ShowDialog();
-                LoadEventPhotos();
+                //LoadEventPhotos();
+                LoadEventPhotosv2();
             }
             else if (tabControl1.SelectedIndex == 3)
             {
                 Form16 f16 = new Form16();
                 f16.ShowDialog();
-                LoadStaff();
+                //LoadStaff();
+                LoadStaffv2();
             }
             else if (tabControl1.SelectedIndex == 4)
             {
                 Form14 f14 = new Form14();
                 f14.ShowDialog();
-                LoadChampions();
+                //LoadChampions();
+                LoadChampionsv2();
             }
         }
 
@@ -655,7 +973,7 @@ namespace PABR_PedigreeChartGenerator
 
             button6.Text = "Add Record";
 
-            LoadChampions();
+            //LoadChampions();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -701,6 +1019,7 @@ namespace PABR_PedigreeChartGenerator
 
             label2.Text = label2.Text + "    " + LoginDetails.userFName + " " + LoginDetails.userLName;
             //label3.Text = label3.Text + "   " + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt");
+            LoadEventPosterv2();
         }
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -710,38 +1029,247 @@ namespace PABR_PedigreeChartGenerator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!isPaused)
-            {
-                currentIndex = (currentIndex + 1) % webPaths.Length;
-                pictureBox2.Load(webPaths[currentIndex]);
-            }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            currentIndex = (currentIndex - 1 + webPaths.Length) % webPaths.Length;
-            pictureBox2.Load(webPaths[currentIndex]);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            isPaused = !isPaused;
-            if (isPaused)
-            {
-                button8.Text = "Play";
-                button8.BackColor = Color.DimGray;
-            }
-            else
-            {
-                button8.Text = "Pause";
-                button8.BackColor = Color.White;
-            }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            currentIndex = (currentIndex + 1) % webPaths.Length;
-            pictureBox2.Load(webPaths[currentIndex]);
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView2.Columns[8].Index && e.RowIndex >= 0)
+            {
+                // Prompt the user to confirm the deletion
+                DialogResult result = MessageBox.Show("Delete this event?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (var httpClient = new HttpClient())
+                    {
+                        httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                        httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                        var response = httpClient.DeleteAsync("api/ContentData/DeleteContentData?RequestType=EventPoster&ID=" + dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString()).Result;
+                        var resp = response.Content.ReadAsStringAsync();
+                        var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                        var status = responseJson.status;
+                        var title = responseJson.title;
+
+                        if (status == "error" && title == "Data Not Deleted")
+                        {
+                            MessageBox.Show("Unable to delete event.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (status == "success" && title == "Data Deleted")
+                        {
+                            MessageBox.Show("Successfully deleted.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        LoadEventPosterv2();
+                    }
+                }
+            }
+            else if (e.ColumnIndex == dataGridView2.Columns[7].Index && e.RowIndex >= 0)
+            {
+                CurSelectedContentImage.ContentImage = "";
+                CurSelectedContentImage.ContentImage = dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                Form18 f18 = new Form18();
+                f18.ShowDialog();
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView3.Columns[9].Index && e.RowIndex >= 0)
+            {
+                // Prompt the user to confirm the deletion
+                DialogResult result = MessageBox.Show("Remove this staff?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (var httpClient = new HttpClient())
+                    {
+                        httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                        httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                        var response = httpClient.DeleteAsync("api/ContentData/DeleteContentData?RequestType=PABRStaff&ID=" + dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString()).Result;
+                        var resp = response.Content.ReadAsStringAsync();
+                        var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                        var status = responseJson.status;
+                        var title = responseJson.title;
+
+                        if (status == "error" && title == "Data Not Deleted")
+                        {
+                            MessageBox.Show("Unable to delete staff.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (status == "success" && title == "Data Deleted")
+                        {
+                            MessageBox.Show("Successfully deleted.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        LoadStaffv2();
+                    }
+                }
+            }
+            else if (e.ColumnIndex == dataGridView3.Columns[8].Index && e.RowIndex >= 0)
+            {
+                CurSelectedContentImage.ContentImage = "";
+                CurSelectedContentImage.ContentImage = dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                Form18 f18 = new Form18();
+                f18.ShowDialog();
+            }
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView4.Columns[8].Index && e.RowIndex >= 0)
+            {
+                // Prompt the user to confirm the deletion
+                DialogResult result = MessageBox.Show("Remove this champion?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (var httpClient = new HttpClient())
+                    {
+                        httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                        httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                        var response = httpClient.DeleteAsync("api/ContentData/DeleteContentData?RequestType=PABRChampions&ID=" + dataGridView4.Rows[e.RowIndex].Cells[0].Value.ToString()).Result;
+                        var resp = response.Content.ReadAsStringAsync();
+                        var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                        var status = responseJson.status;
+                        var title = responseJson.title;
+
+                        if (status == "error" && title == "Data Not Deleted")
+                        {
+                            MessageBox.Show("Unable to delete champion.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (status == "success" && title == "Data Deleted")
+                        {
+                            MessageBox.Show("Successfully deleted.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        LoadChampionsv2();
+                    }
+                }
+            }
+            else if (e.ColumnIndex == dataGridView4.Columns[7].Index && e.RowIndex >= 0)
+            {
+                if (string.IsNullOrWhiteSpace(dataGridView4.Rows[e.RowIndex].Cells[4].Value.ToString()))
+                {
+                    CurSelectedContentImage.ContentImage = "";
+                    MessageBox.Show("No Certificate Uploaded.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+
+                }
+
+                CurSelectedContentImage.ContentImage = "";
+                CurSelectedContentImage.ContentImage = dataGridView4.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                Form19 f19 = new Form19();
+                f19.ShowDialog();
+            }
+            else if (e.ColumnIndex == dataGridView4.Columns[6].Index && e.RowIndex >= 0)
+            {
+                CurSelectedContentImage.ContentImage = "";
+                CurSelectedContentImage.ContentImage = dataGridView4.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+                Form18 f18 = new Form18();
+                f18.ShowDialog();
+            }
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView5.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                // Prompt the user to confirm the deletion
+                DialogResult result = MessageBox.Show("Delete this image?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    bool res = DeleteRecord(dataGridView5.Rows[e.RowIndex].Cells["recID"].Value.ToString());
+
+                    if (res)
+                    {
+                        MessageBox.Show("Successfully deleted.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to delete image.\nPlease try again later.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    LoadEventPhotosv2();
+                }
+            }
+            else if (e.ColumnIndex == dataGridView5.Columns[4].Index && e.RowIndex >= 0)
+            {
+                CurSelectedContentImage.ContentImage = "";
+                CurSelectedContentImage.ContentImage = dataGridView5.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                Form19 f19 = new Form19();
+                f19.ShowDialog();
+            }
+        }
+        private bool DeleteRecord(string ID)
+        {
+            bool res = false;
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
+                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                var response = httpClient.DeleteAsync("api/ContentData/DeleteContentData?RequestType=EventPhotos&ID=" + ID).Result;
+                var resp = response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<dynamic>(resp.Result);
+                var status = responseJson.status;
+                var title = responseJson.title;
+
+                if (status == "error" && title == "Data Not Deleted")
+                {
+                    res = false;
+                }
+                else if (status == "success" && title == "Data Deleted")
+                {
+                    res = true;
+                }
+            }
+
+            return res;
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            List<string> selectedIDs = new List<string>();
+            foreach (DataGridViewRow row in dataGridView5.Rows)
+            {
+                DataGridViewCheckBoxCell chk = row.Cells["chk"] as DataGridViewCheckBoxCell;
+                if (chk.Value == chk.TrueValue)
+                {
+                    string id = row.Cells["recID"].Value.ToString();
+                    selectedIDs.Add(id);
+                }
+            }
+
+            if (selectedIDs.Count == 0)
+            {
+                MessageBox.Show("No selected records", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Delete selected image(s)?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    foreach (string value in selectedIDs)
+                    {
+                        DeleteRecord(value);
+                    }
+                    MessageBox.Show("Successfully deleted.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadEventPhotosv2();
+                }
+            }
         }
     }
 }

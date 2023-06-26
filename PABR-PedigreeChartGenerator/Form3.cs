@@ -1,21 +1,26 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static PABR_PedigreeChartGenerator.DogDetails;
 
 namespace PABR_PedigreeChartGenerator
 {
     public partial class Form3 : Form
     {
+        public static DataTable dogs;
         public Form3()
         {
             InitializeComponent();
@@ -79,7 +84,7 @@ namespace PABR_PedigreeChartGenerator
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
 
-                pointA:
+            pointA:
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.PostAsync("api/PedigreeChart/GetAll", null).Result;
                 var resp = response.Content.ReadAsStringAsync();
@@ -109,135 +114,239 @@ namespace PABR_PedigreeChartGenerator
                         return;
                     }
                 }
+                JArray jsonArray = JArray.Parse(resp.Result);
+                dtDog= JsonConvert.DeserializeObject<DataTable>(jsonArray.ToString());
 
-                List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
 
-                if (jsonList.Count() == 0)
-                {
-                    return;
-                }
+                //List<dynamic> jsonList = JsonConvert.DeserializeObject<List<dynamic>>(resp.Result);
 
-                //col
-                foreach (var item in jsonList[0])
-                {
-                    dtDog.Columns.Add(new DataColumn(item.Name, typeof(string)));
-                }
 
-                //row
-                foreach (var item in jsonList)
-                {
-                    DataRow row = dtDog.NewRow();
-                    foreach (var property in item)
-                    {
-                        row[property.Name] = property.Value.ToString();
-                    }
-                    dtDog.Rows.Add(row);
-                }
+                //if (jsonList.Count() == 0)
+                //{
+                //    return;
+                //}
+
+                ////col
+                //foreach (var item in jsonList[0])
+                //{
+                //    dtDog.Columns.Add(new DataColumn(item.Name, typeof(string)));
+                //}
+
+                ////row
+                //foreach (var item in jsonList)
+                //{
+                //    DataRow row = dtDog.NewRow();
+                //    foreach (var property in item)
+                //    {
+                //        row[property.Name] = property.Value.ToString();
+                //    }
+                //    dtDog.Rows.Add(row);
+                //}
             }
-            sbDog.DataSource = dtDog;
+            dogs = new DataTable();
+            dogs.Clear();
+            dogs = dtDog;
 
-            dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = sbDog;
+            string end = string.Empty;
+
+            #region Commented - causing slowness
+            //sbDog.DataSource = dtDog;
+
+            //dataGridView1.Columns.Clear();
+            //dataGridView1.DataSource = sbDog;
 
 
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Dog Name";
-            dataGridView1.Columns[2].HeaderText = "Gender";
-            dataGridView1.Columns[3].HeaderText = "Breed";
-            dataGridView1.Columns[4].HeaderText = "Color";
-            dataGridView1.Columns[5].HeaderText = "Date of Birth";
-            dataGridView1.Columns[6].HeaderText = "Owner Name";
-            dataGridView1.Columns[7].HeaderText = "PABR No.";
-            dataGridView1.Columns[8].HeaderText = "Date Added";
-            dataGridView1.Columns[9].HeaderText = "PictureURL";
+            //dataGridView1.Columns[0].HeaderText = "ID";
+            //dataGridView1.Columns[1].HeaderText = "Dog Name";
+            //dataGridView1.Columns[2].HeaderText = "Gender";
+            //dataGridView1.Columns[3].HeaderText = "Breed";
+            //dataGridView1.Columns[4].HeaderText = "Color";
+            //dataGridView1.Columns[5].HeaderText = "Date of Birth";
+            //dataGridView1.Columns[6].HeaderText = "Owner Name";
+            //dataGridView1.Columns[7].HeaderText = "PABR No.";
+            //dataGridView1.Columns[8].HeaderText = "Date Added";
+            //dataGridView1.Columns[9].HeaderText = "PictureURL";
 
-            dataGridView1.Columns[9].Visible = false; //PictureURL
+            //dataGridView1.Columns[9].Visible = false; //PictureURL
 
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            //dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            ////dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            #endregion
 
 
             #region Filter to Dam and Sire
 
             #region DAM
+
+            #region Commented - causing slowness
+            //DamSireDataTable.DamData = new DataTable();
+            //// Copy the structure of the original DataGridView to the filteredData
+            //foreach (DataGridViewColumn column in dataGridView1.Columns)
+            //{
+            //    DamSireDataTable.DamData.Columns.Add(column.Name);
+            //}
+
+            //// Clear the filteredData table to ensure it's empty
+            //DamSireDataTable.DamData.Clear();
+
+            //// Loop through each row in the dataGridView1
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    // Get the value of the "Gender" column in the current row
+            //    string gender = row.Cells["Gender"].Value.ToString();
+
+            //    // Check if the gender is not "Male"
+            //    if (!string.Equals(gender, "M", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        // If the gender is not "Male", create a new row in the filteredData
+            //        DataRow newRow = DamSireDataTable.DamData.NewRow();
+
+            //        // Copy the values of all columns in the current row to the newRow
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //        {
+            //            newRow[cell.ColumnIndex] = cell.Value;
+            //        }
+
+            //        // Add the newRow to the filteredData
+            //        DamSireDataTable.DamData.Rows.Add(newRow);
+            //    }
+            //}
+            #endregion
+
             DamSireDataTable.DamData = new DataTable();
-            // Copy the structure of the original DataGridView to the filteredData
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
-            {
-                DamSireDataTable.DamData.Columns.Add(column.Name);
-            }
 
-            // Clear the filteredData table to ensure it's empty
-            DamSireDataTable.DamData.Clear();
+            //// Copy the structure of the original DataTable to the filteredData
+            //foreach (DataColumn column in dtDog.Columns)
+            //{
+            //    DamSireDataTable.DamData.Columns.Add(column.ColumnName, column.DataType);
+            //}
 
-            // Loop through each row in the dataGridView1
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Get the value of the "Gender" column in the current row
-                string gender = row.Cells["Gender"].Value.ToString();
+            //// Clear the filteredData table to ensure it's empty
+            //DamSireDataTable.DamData.Clear();
 
-                // Check if the gender is not "Male"
-                if (!string.Equals(gender, "M", StringComparison.OrdinalIgnoreCase))
-                {
-                    // If the gender is not "Male", create a new row in the filteredData
-                    DataRow newRow = DamSireDataTable.DamData.NewRow();
+            //// Loop through each row in the dtDogs DataTable
+            //foreach (DataRow row in dtDog.Rows)
+            //{
+            //    // Get the value of the "Gender" column in the current row
+            //    string gender = row["Gender"].ToString();
 
-                    // Copy the values of all columns in the current row to the newRow
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        newRow[cell.ColumnIndex] = cell.Value;
-                    }
+            //    // Check if the gender is not "Male"
+            //    if (!string.Equals(gender, "M", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        // If the gender is not "Male", create a new row in the filteredData
+            //        DataRow newRow = DamSireDataTable.DamData.NewRow();
 
-                    // Add the newRow to the filteredData
-                    DamSireDataTable.DamData.Rows.Add(newRow);
-                }
-            }
+            //        // Copy the values of all columns in the current row to the newRow
+            //        foreach (DataColumn column in DamSireDataTable.DamData.Columns)
+            //        {
+            //            newRow[column.ColumnName] = row[column.ColumnName];
+            //        }
 
+            //        // Add the newRow to the filteredData
+            //        DamSireDataTable.DamData.Rows.Add(newRow);
+            //    }
+            //}
+
+            // Filter the DataTable by gender using LINQ
+            string filterExpressionDam = "Gender = 'F'";
+            DataRow[] filteredRowsDam = dtDog.Select(filterExpressionDam);
+
+            // Create a new DataTable and copy the structure of the original DataTable
+            DamSireDataTable.DamData = dtDog.Clone();
+
+            // Import the filtered rows into the new DataTable
+            DamSireDataTable.DamData = filteredRowsDam.CopyToDataTable();
             #endregion
 
             #region SIRE
+
+            #region Commented - causing slowness
+            //DamSireDataTable.SireData = new DataTable();
+            //// Copy the structure of the original DataGridView to the filteredData
+            //foreach (DataGridViewColumn column in dataGridView1.Columns)
+            //{
+            //    DamSireDataTable.SireData.Columns.Add(column.Name);
+            //}
+
+            //// Clear the filteredData table to ensure it's empty
+            //DamSireDataTable.SireData.Clear();
+
+            //// Loop through each row in the dataGridView1
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    // Get the value of the "Gender" column in the current row
+            //    string gender = row.Cells["Gender"].Value.ToString();
+
+            //    // Check if the gender is not "Male"
+            //    if (!string.Equals(gender, "F", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        // If the gender is not "Male", create a new row in the filteredData
+            //        DataRow newRow = DamSireDataTable.SireData.NewRow();
+
+            //        // Copy the values of all columns in the current row to the newRow
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //        {
+            //            newRow[cell.ColumnIndex] = cell.Value;
+            //        }
+
+            //        // Add the newRow to the filteredData
+            //        DamSireDataTable.SireData.Rows.Add(newRow);
+            //    }
+            //}
+            #endregion
+
             DamSireDataTable.SireData = new DataTable();
-            // Copy the structure of the original DataGridView to the filteredData
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
-            {
-                DamSireDataTable.SireData.Columns.Add(column.Name);
-            }
 
-            // Clear the filteredData table to ensure it's empty
-            DamSireDataTable.SireData.Clear();
+            //// Copy the structure of the original DataTable to the filteredData
+            //foreach (DataColumn column in dtDog.Columns)
+            //{
+            //    DamSireDataTable.SireData.Columns.Add(column.ColumnName, column.DataType);
+            //}
 
-            // Loop through each row in the dataGridView1
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Get the value of the "Gender" column in the current row
-                string gender = row.Cells["Gender"].Value.ToString();
+            //// Clear the filteredData table to ensure it's empty
+            //DamSireDataTable.SireData.Clear();
 
-                // Check if the gender is not "Male"
-                if (!string.Equals(gender, "F", StringComparison.OrdinalIgnoreCase))
-                {
-                    // If the gender is not "Male", create a new row in the filteredData
-                    DataRow newRow = DamSireDataTable.SireData.NewRow();
+            //// Loop through each row in the dtDogs DataTable
+            //foreach (DataRow row in dtDog.Rows)
+            //{
+            //    // Get the value of the "Gender" column in the current row
+            //    string gender = row["Gender"].ToString();
 
-                    // Copy the values of all columns in the current row to the newRow
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        newRow[cell.ColumnIndex] = cell.Value;
-                    }
+            //    // Check if the gender is not "Male"
+            //    if (!string.Equals(gender, "F", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        // If the gender is not "Male", create a new row in the filteredData
+            //        DataRow newRow = DamSireDataTable.SireData.NewRow();
 
-                    // Add the newRow to the filteredData
-                    DamSireDataTable.SireData.Rows.Add(newRow);
-                }
-            }
+            //        // Copy the values of all columns in the current row to the newRow
+            //        foreach (DataColumn column in DamSireDataTable.SireData.Columns)
+            //        {
+            //            newRow[column.ColumnName] = row[column.ColumnName];
+            //        }
 
+            //        // Add the newRow to the filteredData
+            //        DamSireDataTable.SireData.Rows.Add(newRow);
+            //    }
+            //}
+
+            // Filter the DataTable by gender using LINQ
+            string filterExpressionSire = "Gender = 'M'";
+            DataRow[] filteredRowsSire = dtDog.Select(filterExpressionSire);
+
+            // Create a new DataTable and copy the structure of the original DataTable
+            DamSireDataTable.SireData = dtDog.Clone();
+
+            // Import the filtered rows into the new DataTable
+            DamSireDataTable.SireData = filteredRowsSire.CopyToDataTable();
             #endregion
 
             #endregion
@@ -294,7 +403,7 @@ namespace PABR_PedigreeChartGenerator
                 //" OR [breed] LIKE '%" + searchText + "%' OR [color] LIKE '%" + searchText + "%'" +
                 //" OR [doB] LIKE '%" + searchText + "%' OR [ownerName] LIKE '%" + searchText + "%'" +
                 //" OR [pabrNo] LIKE '%" + searchText + "%'";
-                
+
                 ((BindingSource)dataGridView1.DataSource).Filter = "[recID] LIKE '%" + searchText.Replace("'", "''") + "%' OR [dogName] LIKE '%" + searchText.Replace("'", "''") + "%' OR [gender] LIKE '%" + searchText.Replace("'", "''") + "%'" +
                 " OR [breed] LIKE '%" + searchText.Replace("'", "''") + "%' OR [color] LIKE '%" + searchText.Replace("'", "''") + "%'" +
                 " OR [doB] LIKE '%" + searchText.Replace("'", "''") + "%' OR [ownerName] LIKE '%" + searchText.Replace("'", "''") + "%'" +
@@ -304,6 +413,62 @@ namespace PABR_PedigreeChartGenerator
             {
                 ((BindingSource)dataGridView1.DataSource).Filter = "";
             }
+        }
+
+        public void SearchV3()
+        {
+            BindingSource sbDog = new BindingSource();
+            string searchText = textBox1.Text;
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                //((BindingSource)dataGridView1.DataSource).Filter = "[recID] LIKE '%" + searchText + "%' OR [dogName] LIKE '%" + searchText + "%' OR [gender] LIKE '%" + searchText + "%'" +
+                //" OR [breed] LIKE '%" + searchText + "%' OR [color] LIKE '%" + searchText + "%'" +
+                //" OR [doB] LIKE '%" + searchText + "%' OR [ownerName] LIKE '%" + searchText + "%'" +
+                //" OR [pabrNo] LIKE '%" + searchText + "%'";
+                //[recID] LIKE '%" + searchText.Replace("'", "''") + "%' OR 
+
+                dogs.DefaultView.RowFilter = "[dogName] LIKE '%" + searchText.Replace("'", "''") + "%' OR [gender] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [breed] LIKE '%" + searchText.Replace("'", "''") + "%' OR [color] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [doB] LIKE '%" + searchText.Replace("'", "''") + "%' OR [ownerName] LIKE '%" + searchText.Replace("'", "''") + "%'" +
+                " OR [pabrNo] LIKE '%" + searchText.Replace("'", "''") + "%'";
+
+                sbDog.DataSource = dogs;
+
+                dataGridView1.Columns.Clear();
+                dataGridView1.DataSource = sbDog;
+
+
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Dog Name";
+                dataGridView1.Columns[2].HeaderText = "Gender";
+                dataGridView1.Columns[3].HeaderText = "Breed";
+                dataGridView1.Columns[4].HeaderText = "Color";
+                dataGridView1.Columns[5].HeaderText = "Date of Birth";
+                dataGridView1.Columns[6].HeaderText = "Owner Name";
+                dataGridView1.Columns[7].HeaderText = "PABR No.";
+                dataGridView1.Columns[8].HeaderText = "Date Added";
+                dataGridView1.Columns[9].HeaderText = "PictureURL";
+
+                dataGridView1.Columns[9].Visible = false; //PictureURL
+
+                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            else
+            {
+                dogs.DefaultView.RowFilter = "";
+                dataGridView1.Columns.Clear();
+
+            }
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -320,14 +485,18 @@ namespace PABR_PedigreeChartGenerator
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Form5 f5 = new Form5();
             f5.ShowDialog();
-            LoadDataGridView();
+            //LoadDataGridView();
+            if (!string.IsNullOrWhiteSpace(DogDetails.UID))
+            {
+                AddDogToTable(DogDetails.UID, DogDetails.DogName, DogDetails.Gender, DogDetails.Breed, DogDetails.Color, DogDetails.DoB, DogDetails.OwnerName, DogDetails.PABRno, DogDetails.PicURL);
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -371,12 +540,12 @@ namespace PABR_PedigreeChartGenerator
         {
             Form8 f8 = new Form8();
             f8.ShowDialog();
-            LoadDataGridView();
+            //LoadDataGridView();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SearchV2();
+            SearchV3();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -384,6 +553,209 @@ namespace PABR_PedigreeChartGenerator
             this.Dispose();
             Form9 f9 = new Form9();
             f9.ShowDialog();
+        }
+
+        public static void AddDogToTable(string uid, string dogName, string gender, string breed, string color, string dob, string ownerName, string pabrNo, string picUrl)
+        {
+            DataRow newRow = dogs.NewRow();
+            newRow["recID"] = uid;
+            newRow["dogName"] = dogName;
+            newRow["gender"] = gender;
+            newRow["breed"] = breed;
+            newRow["color"] = color;
+            newRow["doB"] = dob;
+            newRow["ownerName"] = ownerName;
+            newRow["pabrNo"] = pabrNo;
+            newRow["dateCreated"] = DateTime.Now;
+            newRow["picURL"] = picUrl;
+
+            dogs.Rows.Add(newRow);
+
+            if (gender == "M")
+            {
+                DataRow newDogRow = DamSireDataTable.SireData.NewRow();
+                newDogRow["recID"] = uid;
+                newDogRow["dogName"] = dogName;
+                newDogRow["gender"] = gender;
+                newDogRow["breed"] = breed;
+                newDogRow["color"] = color;
+                newDogRow["doB"] = dob;
+                newDogRow["ownerName"] = ownerName;
+                newDogRow["pabrNo"] = pabrNo;
+                newDogRow["dateCreated"] = DateTime.Now;
+                newDogRow["picURL"] = picUrl;
+
+                DamSireDataTable.SireData.Rows.Add(newDogRow);
+            }
+            else
+            {
+                DataRow newDogRow = DamSireDataTable.DamData.NewRow();
+                newDogRow["recID"] = uid;
+                newDogRow["dogName"] = dogName;
+                newDogRow["gender"] = gender;
+                newDogRow["breed"] = breed;
+                newDogRow["color"] = color;
+                newDogRow["doB"] = dob;
+                newDogRow["ownerName"] = ownerName;
+                newDogRow["pabrNo"] = pabrNo;
+                newDogRow["dateCreated"] = DateTime.Now;
+                newDogRow["picURL"] = picUrl;
+
+                DamSireDataTable.DamData.Rows.Add(newDogRow);
+            }
+
+
+            DogDetails.ClearProperties();
+        }
+
+        public static void UpdateDogToTable(string uid, string dogName, string gender, string breed, string color, string dob, string ownerName, string pabrNo, string picUrl)
+        {
+            int recIdToUpdate = int.Parse(uid);
+
+            DataRow[] rowsToUpdate = dogs.Select($"RecID = '{recIdToUpdate}'");
+
+            if (rowsToUpdate.Length > 0)
+            {
+                DataRow rowToUpdate = rowsToUpdate[0];
+                rowToUpdate["dogName"] = dogName;
+                rowToUpdate["gender"] = gender;
+                rowToUpdate["breed"] = breed;
+                rowToUpdate["color"] = color;
+                rowToUpdate["doB"] = dob;
+                rowToUpdate["ownerName"] = ownerName;
+                rowToUpdate["pabrNo"] = pabrNo;
+
+                if (picUrl == "")
+                {
+                    rowToUpdate["picURL"] = CurSelectedDog.PicURL;
+                }
+                else if (picUrl == "Removed")
+                {
+                    rowToUpdate["picURL"] = "";
+
+                }
+                else
+                {
+                    rowToUpdate["picURL"] = picUrl;
+
+                }
+            }
+
+            if (gender != CurSelectedDog.Gender)
+            {
+                if (gender == "M")
+                {
+                    //if originally an F, delete then insert to M
+                    int recIdToDelete = int.Parse(uid);
+                    DataRow[] rowsToDelete = DamSireDataTable.DamData.Select($"RecID = '{recIdToDelete}'");
+
+                    if (rowsToDelete.Length > 0)
+                    {
+                        DataRow rowToDelete = rowsToDelete[0];
+                        rowToDelete.Delete();
+
+                        //add
+                        DataRow newDogRow = DamSireDataTable.SireData.NewRow();
+                        newDogRow["recID"] = uid;
+                        newDogRow["dogName"] = dogName;
+                        newDogRow["gender"] = gender;
+                        newDogRow["breed"] = breed;
+                        newDogRow["color"] = color;
+                        newDogRow["doB"] = dob;
+                        newDogRow["ownerName"] = ownerName;
+                        newDogRow["pabrNo"] = pabrNo;
+                        newDogRow["dateCreated"] = DateTime.Now;
+                        newDogRow["picURL"] = picUrl;
+
+                        if (picUrl == "")
+                        {
+                            newDogRow["picURL"] = CurSelectedDog.PicURL;
+                        }
+                        else if (picUrl == "Removed")
+                        {
+                            newDogRow["picURL"] = "";
+
+                        }
+                        else
+                        {
+                            newDogRow["picURL"] = picUrl;
+
+                        }
+
+                        DamSireDataTable.SireData.Rows.Add(newDogRow);
+                    }
+                }
+                else if (gender == "F")
+                {
+                    //if originally an M, delete then insert to F
+                    int recIdToDelete = int.Parse(uid);
+                    DataRow[] rowsToDelete = DamSireDataTable.SireData.Select($"RecID = '{recIdToDelete}'");
+
+                    if (rowsToDelete.Length > 0)
+                    {
+                        DataRow rowToDelete = rowsToDelete[0];
+                        rowToDelete.Delete();
+
+                        //add
+                        DataRow newDogRow = DamSireDataTable.DamData.NewRow();
+                        newDogRow["recID"] = uid;
+                        newDogRow["dogName"] = dogName;
+                        newDogRow["gender"] = gender;
+                        newDogRow["breed"] = breed;
+                        newDogRow["color"] = color;
+                        newDogRow["doB"] = dob;
+                        newDogRow["ownerName"] = ownerName;
+                        newDogRow["pabrNo"] = pabrNo;
+                        newDogRow["dateCreated"] = DateTime.Now;
+                        newDogRow["picURL"] = picUrl;
+
+                        if (picUrl == "")
+                        {
+                            newDogRow["picURL"] = CurSelectedDog.PicURL;
+                        }
+                        else if (picUrl == "Removed")
+                        {
+                            newDogRow["picURL"] = "";
+
+                        }
+                        else
+                        {
+                            newDogRow["picURL"] = picUrl;
+
+                        }
+
+                        DamSireDataTable.DamData.Rows.Add(newDogRow);
+                    }
+
+
+                }
+            }
+        }
+
+        public static void DeleteDogToTable(string uid)
+        {
+            int recIdToDelete = int.Parse(uid);
+            DataRow[] rowsToDeleteDog = dogs.Select($"RecID = '{recIdToDelete}'");
+            DataRow[] rowsToDeleteDam = DamSireDataTable.DamData.Select($"RecID = '{recIdToDelete}'");
+            DataRow[] rowsToDeleteSire = DamSireDataTable.SireData.Select($"RecID = '{recIdToDelete}'");
+
+            if (rowsToDeleteDog.Length > 0)
+            {
+                DataRow rowToDelete = rowsToDeleteDog[0];
+                rowToDelete.Delete();
+            }
+
+            if (rowsToDeleteDam.Length > 0)
+            {
+                DataRow rowToDelete = rowsToDeleteDam[0];
+                rowToDelete.Delete();
+            }
+
+            if (rowsToDeleteSire.Length > 0)
+            {
+                DataRow rowToDelete = rowsToDeleteSire[0];
+                rowToDelete.Delete();
+            }
         }
     }
 }

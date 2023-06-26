@@ -182,7 +182,7 @@ namespace PABR_PedigreeChartGenerator
                 };
                 var json = JsonConvert.SerializeObject(dogParams);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = httpClient.PostAsync("api/PedigreeChart/AddDog", content).Result;
+                var response = httpClient.PostAsync("api/PedigreeChart/AddDogv2", content).Result;
 
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -197,7 +197,22 @@ namespace PABR_PedigreeChartGenerator
                 else if (status == "success" && title == "Dog Registered")
                 {
                     res = true;
-                    var msg = responseJson.message;
+                    var id = responseJson.id;
+
+                    //Add to dtDogs in Form3
+                    #region manually insert to data table
+                    DogDetails.ClearProperties();
+
+                    DogDetails.UID = id.ToString();
+                    DogDetails.DogName = textBox1.Text.Trim();
+                    DogDetails.Gender = (comboBox1.SelectedIndex == 0) ? "M" : "F";
+                    DogDetails.Breed = textBox3.Text.Trim();
+                    DogDetails.Color = textBox4.Text.Trim();
+                    DogDetails.DoB = birthDate;
+                    DogDetails.OwnerName = textBox5.Text.Trim();
+                    DogDetails.PABRno = textBox6.Text.Trim();
+                    DogDetails.PicURL = fileName;
+                    #endregion
                 }
             }
 

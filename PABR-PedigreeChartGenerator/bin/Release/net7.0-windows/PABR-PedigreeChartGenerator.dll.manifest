@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PABR-PedigreeChartGenerator.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PABR-PedigreeChartGenerator.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="logo2.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Launcher.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="15872">
-      <assemblyIdentity name="Launcher" version="7.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="16384">
+      <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XBW0Js7j34/HmAThWZVClytcpVeXWlY4Z/ge7VD0h80=</dsig:DigestValue>
+        <dsig:DigestValue>NvBEr8rPryCk6casKilwj3c29FZFoxYun/tGOV3ywK4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -135,22 +135,22 @@
       <dsig:DigestValue>Ugc1mLyl2H2Alg9WJvtuuyPi9OlQRWeqSU3FmeGuNow=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PABR-PedigreeChartGenerator.dll" size="4499968">
+  <file name="PABR-PedigreeChartGenerator.dll" size="6180864">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iLUZ3AyVl/fZLaE+6jqXm8ZxFQ3E7/eowubpAL+QHQw=</dsig:DigestValue>
+      <dsig:DigestValue>X6n+TwL9HcGyr+GiKBWL7M2zmvJIaxJLy15YhdO9cYM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PABR-PedigreeChartGenerator.exe" size="421376">
+  <file name="PABR-PedigreeChartGenerator.exe" size="422400">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dutKvbhUa7b7iSCc2vHrEjvCEcZvrAzJBsm371e7x78=</dsig:DigestValue>
+      <dsig:DigestValue>J40u1IOAZRbDzO7Hhpp3LvM0ieYqV8K0CxCaF6nstAA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PABR-PedigreeChartGenerator.runtimeconfig.json" size="372">

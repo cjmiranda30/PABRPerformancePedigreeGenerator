@@ -16,6 +16,7 @@ using System.Reflection.Metadata;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using System.Globalization;
+using static MetroFramework.Drawing.MetroPaint.BorderColor;
 
 namespace PABR_PedigreeChartGenerator
 {
@@ -160,6 +161,10 @@ namespace PABR_PedigreeChartGenerator
                     // Update the label with the current progress percentage
                     //label.Visible = true;
                     //label.Text = $"{progressBar.Value}%";
+
+                    #region Add Dog to List
+
+                    #endregion
                 }
             }
 
@@ -175,7 +180,7 @@ namespace PABR_PedigreeChartGenerator
             }
             else
             {
-                if(string.IsNullOrWhiteSpace(textBox2.Text))
+                if (string.IsNullOrWhiteSpace(textBox2.Text))
                 {
                     isImageFolderNotAvailable = true;
                 }
@@ -268,7 +273,7 @@ namespace PABR_PedigreeChartGenerator
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
 
-                pointA:
+            pointA:
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var dogParams = new
                 {
@@ -284,7 +289,7 @@ namespace PABR_PedigreeChartGenerator
                 };
                 var json = JsonConvert.SerializeObject(dogParams);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = httpClient.PostAsync("api/PedigreeChart/AddDog", content).Result;
+                var response = httpClient.PostAsync("api/PedigreeChart/AddDogv2", content).Result;
 
                 //check response code
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
@@ -325,11 +330,22 @@ namespace PABR_PedigreeChartGenerator
                 else if (status == "success" && title == "Dog Registered")
                 {
                     res = true;
-                    var msg = responseJson.message;
+                    var id = responseJson.id;
+
+                    //Add to dtDogs in Form3
+                    #region manually insert to data table
+
+                    Form3.AddDogToTable(id.ToString(), dogName, gender, breed, color, dob, owner, pabrNo, fileName);
+                    #endregion
                 }
             }
 
             return res;
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

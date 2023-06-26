@@ -28,198 +28,198 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label4 = new Label();
+            label3 = new Label();
+            button3 = new Button();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            button1 = new Button();
+            groupBox2 = new GroupBox();
+            label6 = new Label();
+            label5 = new Label();
+            progressBar1 = new ProgressBar();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(3, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 124);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Import";
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(3, 1);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(452, 124);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Import";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label4.Location = new System.Drawing.Point(73, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Kindly specify the folder path if available";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Historic", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label4.ForeColor = Color.MediumBlue;
+            label4.Location = new Point(73, 99);
+            label4.Name = "label4";
+            label4.Size = new Size(215, 13);
+            label4.TabIndex = 19;
+            label4.Text = "Kindly specify the folder path if available";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(73, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Kindly specify the file path";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Historic", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(73, 55);
+            label3.Name = "label3";
+            label3.Size = new Size(142, 13);
+            label3.TabIndex = 18;
+            label3.Text = "Kindly specify the file path";
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(413, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 25);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Location = new Point(413, 71);
+            button3.Name = "button3";
+            button3.Size = new Size(32, 25);
+            button3.TabIndex = 17;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(72, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(335, 23);
-            this.textBox2.TabIndex = 16;
+            textBox2.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(72, 73);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(335, 23);
+            textBox2.TabIndex = 16;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(19, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Images:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(19, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 15);
+            label2.TabIndex = 15;
+            label2.Text = "Images:";
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(414, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 25);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(414, 28);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 25);
+            button2.TabIndex = 14;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(73, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(335, 23);
-            this.textBox1.TabIndex = 1;
+            textBox1.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(73, 30);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(335, 23);
+            textBox1.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CSV Path:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(9, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(58, 15);
+            label1.TabIndex = 0;
+            label1.Text = "CSV Path:";
             // 
             // button1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(296, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 56);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Upload";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(296, 127);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 56);
+            button1.TabIndex = 12;
+            button1.Text = "Upload";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Location = new System.Drawing.Point(3, 119);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 64);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(progressBar1);
+            groupBox2.Location = new Point(3, 119);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(287, 64);
+            groupBox2.TabIndex = 14;
+            groupBox2.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 15);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Status: Waiting...";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(6, 38);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 15);
+            label6.TabIndex = 21;
+            label6.Text = "Status: Waiting...";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(248, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 15);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "0 %";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Historic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(248, 12);
+            label5.Name = "label5";
+            label5.Size = new Size(26, 15);
+            label5.TabIndex = 20;
+            label5.Text = "0 %";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 12);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(236, 23);
-            this.progressBar1.TabIndex = 0;
+            progressBar1.Location = new Point(6, 12);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(236, 23);
+            progressBar1.TabIndex = 0;
             // 
             // Form8
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(460, 194);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form8";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PABR - Batch Upload";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(460, 194);
+            Controls.Add(button1);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Form8";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "PABR - Batch Upload";
+            Load += Form8_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

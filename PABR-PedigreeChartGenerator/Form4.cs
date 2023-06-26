@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Net.Http;
@@ -85,7 +86,9 @@ namespace PABR_PedigreeChartGenerator
 
                         if (System.Windows.Forms.Application.OpenForms["Form3"] != null)
                         {
-                            (System.Windows.Forms.Application.OpenForms["Form3"] as Form3).LoadDataGridView();
+                            //(System.Windows.Forms.Application.OpenForms["Form3"] as Form3).LoadDataGridView();
+                            Form3.DeleteDogToTable(CurSelectedDog.UID);
+                            (System.Windows.Forms.Application.OpenForms["Form3"] as Form3).SearchV3();
                         }
                         this.Dispose();
                     }
@@ -123,7 +126,8 @@ namespace PABR_PedigreeChartGenerator
 
                 if (System.Windows.Forms.Application.OpenForms["Form3"] != null)
                 {
-                    (System.Windows.Forms.Application.OpenForms["Form3"] as Form3).LoadDataGridView();
+                    //(System.Windows.Forms.Application.OpenForms["Form3"] as Form3).LoadDataGridView();
+                    (System.Windows.Forms.Application.OpenForms["Form3"] as Form3).SearchV3();
                 }
                 this.Dispose();
             }
@@ -208,7 +212,8 @@ namespace PABR_PedigreeChartGenerator
                 }
                 else if (fileName == "Removed")
                 {
-                    string blnkVal = string.Empty;
+                    //string blnkVal = string.Empty;
+                    string blnkVal = "Removed";
                     qString = "api/PedigreeChart/UpdateDog?DogID=" + DogID.ToString() + "&DogName=" + DogName + "&Gender=" + Gender + "&Breed=" + Breed + "&Color=" + Color + "&DoB=" + DoB + "&OwnerName=" + OwnerName + "&PABRNo=" + PABRNo + "&PicURL=" + blnkVal;
 
                 }
@@ -232,6 +237,8 @@ namespace PABR_PedigreeChartGenerator
                 else if (status == "success")
                 {
                     result = true;
+
+                    Form3.UpdateDogToTable(DogID.ToString(), DogName, Gender, Breed, Color, DoB, OwnerName, PABRNo, fileName);
                 }
 
             }

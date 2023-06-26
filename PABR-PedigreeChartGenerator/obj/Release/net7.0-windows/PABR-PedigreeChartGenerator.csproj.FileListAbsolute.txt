@@ -37,6 +37,12 @@ D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGener
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form11.resources
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form12.resources
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form13.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form14.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form15.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form16.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form17.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form18.resources
+D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR_PedigreeChartGenerator.Form19.resources
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\PABR-PedigreeChartGenerator.dll.manifest
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\bin\Release\net7.0-windows\PABR-PedigreeChartGenerator.application
 D:\Freelance Project\PABR\GitHub Project\PABRPFGenerator\PABR-PedigreeChartGenerator\obj\Release\net7.0-windows\PABR-PedigreeChartGenerator.dll.manifest

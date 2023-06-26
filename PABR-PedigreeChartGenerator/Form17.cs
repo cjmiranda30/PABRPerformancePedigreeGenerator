@@ -20,7 +20,7 @@ namespace PABR_PedigreeChartGenerator
         public Form17()
         {
             InitializeComponent();
-            LoadDataGridView();
+            //LoadDataGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace PABR_PedigreeChartGenerator
             }
 
             MessageBox.Show("Photo(s) Uploaded.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LoadDataGridView();
+            //LoadDataGridView();
         }
 
 
@@ -119,7 +119,8 @@ namespace PABR_PedigreeChartGenerator
 
             //Insert event poster to DB
             using (var httpClient = new HttpClient())
-            {;
+            {
+                ;
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com");
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var dataParams = new
@@ -153,11 +154,11 @@ namespace PABR_PedigreeChartGenerator
         void LoadDataGridView()
         {
             DataTable gallery = new DataTable();
-            BindingSource sbGallery= new BindingSource();
+            BindingSource sbGallery = new BindingSource();
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://pabrdexapi.com/");
-                httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
+                //httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + LoginDetails.accessToken);
                 var response = httpClient.GetAsync("api/ContentData/GetContentData?RequestType=EventPhotos").Result;
                 var resp = response.Content.ReadAsStringAsync();
 
@@ -320,6 +321,11 @@ namespace PABR_PedigreeChartGenerator
                     LoadDataGridView();
                 }
             }
+        }
+
+        private void Form17_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
